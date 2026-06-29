@@ -1,0 +1,658 @@
+[
+  {
+    "name": "Pantai Padang (Taplau)",
+    "category": "Wisata Alam",
+    "zone": "Pesisir/Pantai",
+    "price_range": "Gratis",
+    "indoor_outdoor": "Outdoor",
+    "duration": "Sedang",
+    "cocok_untuk": ["Keluarga & anak", "Pasangan", "Rombongan"],
+    "waktu_ideal": ["Sore/sunset", "Malam"],
+    "tags": {
+      "suasana": ["santai", "ramai", "instagramable"],
+      "aktivitas": ["foto", "kulineran", "relaksasi"],
+      "fasilitas": ["parkir", "toilet", "mushola"]
+    },
+    "description_short": "Pantai ikonik di tepi pusat kota (Tepi Lauik), terkenal untuk menikmati sunset sambil mencicipi jajanan khas Minang."
+  },
+  {
+    "name": "Pantai Air Manis",
+    "category": "Wisata Alam",
+    "zone": "Kawasan Selatan",
+    "price_range": "Murah",
+    "indoor_outdoor": "Outdoor",
+    "duration": "Sedang",
+    "cocok_untuk": ["Keluarga & anak", "Pasangan", "Rombongan"],
+    "waktu_ideal": ["Pagi", "Sore/sunset"],
+    "tags": {
+      "suasana": ["santai", "klasik", "instagramable"],
+      "aktivitas": ["foto", "edukasi", "relaksasi"],
+      "fasilitas": ["parkir", "toilet"]
+    },
+    "description_short": "Pantai berlatar legenda Malin Kundang dengan Batu Malin Kundang yang melegenda, sekitar 10 km dari pusat kota."
+  },
+  {
+    "name": "Pantai Caroline (Carolina)",
+    "category": "Wisata Alam",
+    "zone": "Kawasan Selatan",
+    "price_range": "Murah",
+    "indoor_outdoor": "Outdoor",
+    "duration": "Lama",
+    "cocok_untuk": ["Keluarga & anak", "Rombongan"],
+    "waktu_ideal": ["Pagi", "Siang"],
+    "tags": {
+      "suasana": ["santai", "asri"],
+      "aktivitas": ["berenang", "foto", "relaksasi"],
+      "fasilitas": ["parkir", "toilet"]
+    },
+    "description_short": "Pantai berpasir putih di Teluk Bungus dengan air jernih, cocok untuk berenang dan menyeberang ke pulau-pulau kecil."
+  },
+  {
+    "name": "Pantai Nirwana",
+    "category": "Wisata Alam",
+    "zone": "Kawasan Selatan",
+    "price_range": "Murah",
+    "indoor_outdoor": "Outdoor",
+    "duration": "Sedang",
+    "cocok_untuk": ["Pasangan", "Keluarga & anak"],
+    "waktu_ideal": ["Sore/sunset"],
+    "tags": {
+      "suasana": ["santai", "romantis", "instagramable"],
+      "aktivitas": ["foto", "relaksasi"],
+      "fasilitas": ["parkir"]
+    },
+    "description_short": "Pantai tenang dengan air biru dan ombak landai, salah satu spot sunset favorit di selatan Padang."
+  },
+  {
+    "name": "Pantai Pasir Jambak",
+    "category": "Wisata Alam",
+    "zone": "Pesisir/Pantai",
+    "price_range": "Murah",
+    "indoor_outdoor": "Outdoor",
+    "duration": "Lama",
+    "cocok_untuk": ["Keluarga & anak", "Rombongan"],
+    "waktu_ideal": ["Pagi", "Sore/sunset"],
+    "tags": {
+      "suasana": ["santai", "asri"],
+      "aktivitas": ["berenang", "foto", "edukasi"],
+      "fasilitas": ["parkir", "toilet"]
+    },
+    "description_short": "Pantai berpasir putih luas dengan area konservasi penyu, cocok untuk piknik keluarga dan wisata edukasi."
+  },
+  {
+    "name": "Pulau Pasumpahan",
+    "category": "Wisata Alam",
+    "zone": "Kepulauan",
+    "price_range": "Sedang",
+    "indoor_outdoor": "Outdoor",
+    "duration": "Lama",
+    "cocok_untuk": ["Rombongan", "Pasangan", "Solo"],
+    "waktu_ideal": ["Pagi", "Siang"],
+    "tags": {
+      "suasana": ["petualangan", "instagramable", "asri"],
+      "aktivitas": ["berenang", "foto", "relaksasi"],
+      "fasilitas": ["toilet"]
+    },
+    "description_short": "Pulau berpasir putih dijuluki 'Maldives-nya Padang', spot snorkeling jernih, diakses naik boat dari Bungus."
+  },
+  {
+    "name": "Pulau Sikuai",
+    "category": "Wisata Alam",
+    "zone": "Kepulauan",
+    "price_range": "Sedang",
+    "indoor_outdoor": "Outdoor",
+    "duration": "Lama",
+    "cocok_untuk": ["Pasangan", "Rombongan"],
+    "waktu_ideal": ["Pagi", "Siang"],
+    "tags": {
+      "suasana": ["santai", "romantis", "instagramable"],
+      "aktivitas": ["berenang", "foto", "relaksasi"],
+      "fasilitas": ["toilet"]
+    },
+    "description_short": "Pulau tropis dengan air bening dan pasir putih, cocok untuk snorkeling, diving, atau bersantai."
+  },
+  {
+    "name": "Air Terjun Lubuk Hitam",
+    "category": "Wisata Alam",
+    "zone": "Kawasan Selatan",
+    "price_range": "Murah",
+    "indoor_outdoor": "Outdoor",
+    "duration": "Sedang",
+    "cocok_untuk": ["Rombongan", "Solo"],
+    "waktu_ideal": ["Pagi", "Siang"],
+    "tags": {
+      "suasana": ["asri", "petualangan"],
+      "aktivitas": ["hiking", "berenang", "foto"],
+      "fasilitas": ["parkir"]
+    },
+    "description_short": "Air terjun bertingkat dengan bukit hijau di kawasan Bungus, segar untuk bermain air dan trekking ringan."
+  },
+  {
+    "name": "Lubuk Paraku",
+    "category": "Wisata Alam",
+    "zone": "Perbukitan",
+    "price_range": "Murah",
+    "indoor_outdoor": "Outdoor",
+    "duration": "Sedang",
+    "cocok_untuk": ["Keluarga & anak", "Rombongan"],
+    "waktu_ideal": ["Pagi", "Siang"],
+    "tags": {
+      "suasana": ["asri", "santai"],
+      "aktivitas": ["berenang", "relaksasi", "foto"],
+      "fasilitas": ["parkir"]
+    },
+    "description_short": "Pemandian alam berair jernih dan rindang di Lubuk Kilangan, favorit untuk piknik dan berenang."
+  },
+  {
+    "name": "Bukit Nobita",
+    "category": "Wisata Alam",
+    "zone": "Perbukitan",
+    "price_range": "Murah",
+    "indoor_outdoor": "Outdoor",
+    "duration": "Sedang",
+    "cocok_untuk": ["Solo", "Pasangan", "Rombongan"],
+    "waktu_ideal": ["Pagi"],
+    "tags": {
+      "suasana": ["petualangan", "instagramable", "asri"],
+      "aktivitas": ["hiking", "foto"],
+      "fasilitas": ["parkir"]
+    },
+    "description_short": "Bukit di Lubuk Begalung dengan panorama kota dari ketinggian, populer untuk berburu sunrise dan kabut pagi."
+  },
+  {
+    "name": "Sitinjau Lauik",
+    "category": "Wisata Alam",
+    "zone": "Perbukitan",
+    "price_range": "Gratis",
+    "indoor_outdoor": "Outdoor",
+    "duration": "Singkat",
+    "cocok_untuk": ["Solo", "Pasangan", "Rombongan"],
+    "waktu_ideal": ["Pagi", "Sore/sunset"],
+    "tags": {
+      "suasana": ["petualangan", "instagramable"],
+      "aktivitas": ["foto", "kulineran"],
+      "fasilitas": ["parkir"]
+    },
+    "description_short": "Spot panorama jalan berkelok dan perbukitan hijau di jalur Padang–Solok, dikelilingi kafe kekinian."
+  },
+  {
+    "name": "Jembatan Siti Nurbaya",
+    "category": "Wisata Sejarah & Budaya",
+    "zone": "Pusat Kota",
+    "price_range": "Gratis",
+    "indoor_outdoor": "Outdoor",
+    "duration": "Singkat",
+    "cocok_untuk": ["Pasangan", "Keluarga & anak", "Solo"],
+    "waktu_ideal": ["Sore/sunset", "Malam"],
+    "tags": {
+      "suasana": ["romantis", "instagramable", "klasik", "ramai"],
+      "aktivitas": ["foto", "kulineran", "relaksasi"],
+      "fasilitas": ["parkir"]
+    },
+    "description_short": "Landmark kota terkait novel Siti Nurbaya; ramai di sore-malam dengan pedagang kuliner dan pemandangan Batang Arau."
+  },
+  {
+    "name": "Museum Adityawarman",
+    "category": "Wisata Sejarah & Budaya",
+    "zone": "Pusat Kota",
+    "price_range": "Murah",
+    "indoor_outdoor": "Indoor",
+    "duration": "Sedang",
+    "cocok_untuk": ["Keluarga & anak", "Lansia", "Rombongan", "Ramah difabel"],
+    "waktu_ideal": ["Pagi", "Siang"],
+    "tags": {
+      "suasana": ["klasik", "instagramable"],
+      "aktivitas": ["edukasi", "foto"],
+      "fasilitas": ["parkir", "toilet", "mushola", "area anak", "ramah difabel"]
+    },
+    "description_short": "Museum budaya Minangkabau berbentuk Rumah Gadang dengan ribuan koleksi sejarah, pakaian adat, dan senjata tradisional."
+  },
+  {
+    "name": "Kota Tua Padang (Kampung Pondok / Kampung Cina)",
+    "category": "Wisata Sejarah & Budaya",
+    "zone": "Pusat Kota",
+    "price_range": "Gratis",
+    "indoor_outdoor": "Outdoor",
+    "duration": "Sedang",
+    "cocok_untuk": ["Solo", "Pasangan", "Rombongan"],
+    "waktu_ideal": ["Sore/sunset", "Malam"],
+    "tags": {
+      "suasana": ["klasik", "instagramable", "ramai"],
+      "aktivitas": ["foto", "kulineran", "edukasi"],
+      "fasilitas": ["parkir"]
+    },
+    "description_short": "Kawasan bangunan kolonial dan pecinan; saat malam dipenuhi lampion dan kuliner khas Tionghoa–Minang."
+  },
+  {
+    "name": "Taman Muaro Lasak & Monumen Merpati Perdamaian",
+    "category": "Wisata Sejarah & Budaya",
+    "zone": "Pesisir/Pantai",
+    "price_range": "Gratis",
+    "indoor_outdoor": "Outdoor",
+    "duration": "Singkat",
+    "cocok_untuk": ["Keluarga & anak", "Pasangan"],
+    "waktu_ideal": ["Pagi", "Sore/sunset"],
+    "tags": {
+      "suasana": ["santai", "instagramable"],
+      "aktivitas": ["foto", "relaksasi"],
+      "fasilitas": ["parkir", "toilet"]
+    },
+    "description_short": "Taman tepi pantai dengan monumen origami merpati setinggi 8 meter, landmark foto di kawasan Pantai Padang."
+  },
+  {
+    "name": "Masjid Raya Sumatera Barat",
+    "category": "Wisata Religi",
+    "zone": "Pusat Kota",
+    "price_range": "Gratis",
+    "indoor_outdoor": "Campuran",
+    "duration": "Sedang",
+    "cocok_untuk": ["Keluarga & anak", "Lansia", "Rombongan", "Ramah difabel"],
+    "waktu_ideal": ["Pagi", "Siang", "Sore/sunset"],
+    "tags": {
+      "suasana": ["klasik", "instagramable"],
+      "aktivitas": ["ibadah", "foto", "edukasi"],
+      "fasilitas": ["parkir", "toilet", "mushola", "ramah difabel"]
+    },
+    "description_short": "Masjid ikonik tanpa kubah dengan arsitektur atap gonjong Minangkabau; pusat wisata religi kebanggaan Sumbar."
+  },
+  {
+    "name": "Masjid Al Hakim",
+    "category": "Wisata Religi",
+    "zone": "Pesisir/Pantai",
+    "price_range": "Gratis",
+    "indoor_outdoor": "Campuran",
+    "duration": "Singkat",
+    "cocok_untuk": ["Keluarga & anak", "Pasangan"],
+    "waktu_ideal": ["Pagi", "Sore/sunset"],
+    "tags": {
+      "suasana": ["instagramable", "romantis"],
+      "aktivitas": ["ibadah", "foto"],
+      "fasilitas": ["parkir", "toilet", "mushola"]
+    },
+    "description_short": "Masjid putih bergaya megah di tepi Pantai Padang yang sering disebut mirip Taj Mahal, indah saat sore."
+  },
+  {
+    "name": "RM Lamun Ombak",
+    "category": "Kuliner",
+    "zone": "Pusat Kota",
+    "price_range": "Sedang",
+    "indoor_outdoor": "Indoor",
+    "duration": "Sedang",
+    "cocok_untuk": ["Keluarga & anak", "Rombongan", "Lansia"],
+    "waktu_ideal": ["Siang", "Malam"],
+    "tags": {
+      "suasana": ["ramai"],
+      "aktivitas": ["kulineran"],
+      "fasilitas": ["parkir", "toilet", "mushola", "area anak"]
+    },
+    "description_short": "Rumah makan Padang populer dengan aneka gulai dan masakan Minang otentik, cocok untuk makan keluarga."
+  },
+  {
+    "name": "Sate Manang Kabau",
+    "category": "Kuliner",
+    "zone": "Pusat Kota",
+    "price_range": "Sedang",
+    "indoor_outdoor": "Indoor",
+    "duration": "Singkat",
+    "cocok_untuk": ["Keluarga & anak", "Solo", "Rombongan"],
+    "waktu_ideal": ["Siang", "Malam"],
+    "tags": {
+      "suasana": ["ramai"],
+      "aktivitas": ["kulineran"],
+      "fasilitas": ["parkir", "mushola", "toilet"]
+    },
+    "description_short": "Sate Padang legendaris di Jl. Khatib Sulaiman dengan tiga varian kuah; tersedia ruang VIP dan area taman."
+  },
+  {
+    "name": "Es Durian Iko Gantinyo",
+    "category": "Kuliner",
+    "zone": "Pusat Kota",
+    "price_range": "Murah",
+    "indoor_outdoor": "Indoor",
+    "duration": "Singkat",
+    "cocok_untuk": ["Pasangan", "Solo", "Keluarga & anak"],
+    "waktu_ideal": ["Siang", "Malam"],
+    "tags": {
+      "suasana": ["santai"],
+      "aktivitas": ["kulineran"],
+      "fasilitas": ["parkir"]
+    },
+    "description_short": "Kedai es durian legendaris Padang dengan topping melimpah, segar dinikmati siang atau malam."
+  },
+  {
+    "name": "Martabak Kubang Hayuda",
+    "category": "Kuliner",
+    "zone": "Pusat Kota",
+    "price_range": "Murah",
+    "indoor_outdoor": "Indoor",
+    "duration": "Singkat",
+    "cocok_untuk": ["Keluarga & anak", "Solo", "Rombongan"],
+    "waktu_ideal": ["Malam"],
+    "tags": {
+      "suasana": ["santai", "ramai"],
+      "aktivitas": ["kulineran"],
+      "fasilitas": ["parkir", "toilet"]
+    },
+    "description_short": "Martabak telur khas Kubang berisi daging tebal dengan kuah cuka, ikon kuliner malam di kawasan Ulak Karang."
+  },
+  {
+    "name": "Christine Hakim",
+    "category": "Belanja & Oleh-oleh",
+    "zone": "Pusat Kota",
+    "price_range": "Sedang",
+    "indoor_outdoor": "Indoor",
+    "duration": "Singkat",
+    "cocok_untuk": ["Keluarga & anak", "Rombongan"],
+    "waktu_ideal": ["Pagi", "Siang", "Sore/sunset"],
+    "tags": {
+      "suasana": ["ramai"],
+      "aktivitas": ["belanja"],
+      "fasilitas": ["parkir", "toilet"]
+    },
+    "description_short": "Pusat oleh-oleh khas Padang terkenal: keripik balado, rendang kemasan, dan aneka camilan Minang."
+  },
+  {
+    "name": "Keripik Balado Mahkota / Shirley",
+    "category": "Belanja & Oleh-oleh",
+    "zone": "Pusat Kota",
+    "price_range": "Sedang",
+    "indoor_outdoor": "Indoor",
+    "duration": "Singkat",
+    "cocok_untuk": ["Rombongan", "Keluarga & anak"],
+    "waktu_ideal": ["Pagi", "Siang"],
+    "tags": {
+      "suasana": ["ramai"],
+      "aktivitas": ["belanja"],
+      "fasilitas": ["parkir"]
+    },
+    "description_short": "Toko oleh-oleh keripik balado dan sanjai, pilihan klasik untuk buah tangan khas Padang."
+  },
+  {
+    "name": "Pasar Raya Padang",
+    "category": "Belanja & Oleh-oleh",
+    "zone": "Pusat Kota",
+    "price_range": "Murah",
+    "indoor_outdoor": "Campuran",
+    "duration": "Sedang",
+    "cocok_untuk": ["Rombongan", "Solo"],
+    "waktu_ideal": ["Pagi", "Siang"],
+    "tags": {
+      "suasana": ["ramai"],
+      "aktivitas": ["belanja", "kulineran"],
+      "fasilitas": ["parkir", "toilet"]
+    },
+    "description_short": "Pasar tradisional terbesar di pusat kota untuk berburu oleh-oleh, kain, kuliner, dan kebutuhan harian."
+  },
+  {
+    "name": "Taman Siti Nurbaya",
+    "category": "Rekreasi & Hiburan",
+    "zone": "Pusat Kota",
+    "price_range": "Murah",
+    "indoor_outdoor": "Outdoor",
+    "duration": "Sedang",
+    "cocok_untuk": ["Keluarga & anak", "Pasangan", "Rombongan"],
+    "waktu_ideal": ["Pagi", "Sore/sunset"],
+    "tags": {
+      "suasana": ["santai", "asri", "romantis"],
+      "aktivitas": ["relaksasi", "foto"],
+      "fasilitas": ["parkir", "toilet"]
+    },
+    "description_short": "Taman di perbukitan dekat pusat kota dengan pemandangan teluk, cocok untuk jogging, bersantai, dan berfoto."
+  },
+  {
+    "name": "Skywalk Pantai Air Manis",
+    "category": "Rekreasi & Hiburan",
+    "zone": "Kawasan Selatan",
+    "price_range": "Murah",
+    "indoor_outdoor": "Outdoor",
+    "duration": "Singkat",
+    "cocok_untuk": ["Pasangan", "Rombongan", "Keluarga & anak"],
+    "waktu_ideal": ["Pagi", "Sore/sunset"],
+    "tags": {
+      "suasana": ["instagramable", "petualangan"],
+      "aktivitas": ["foto"],
+      "fasilitas": ["parkir"]
+    },
+    "description_short": "Jembatan kaca terbaru di kawasan Pantai Air Manis dengan pemandangan laut yang instagramable."
+  },
+  {
+    "name": "Soto Garuda",
+    "category": "Kuliner",
+    "zone": "Pusat Kota",
+    "price_range": "Murah",
+    "indoor_outdoor": "Indoor",
+    "duration": "Singkat",
+    "cocok_untuk": ["Keluarga & anak", "Solo", "Rombongan"],
+    "waktu_ideal": ["Pagi", "Siang"],
+    "tags": {
+      "suasana": ["santai"],
+      "aktivitas": ["kulineran"],
+      "fasilitas": ["parkir"]
+    },
+    "description_short": "Kedai soto Padang legendaris dengan kuah gurih dan perkedel, favorit untuk sarapan atau makan siang."
+  },
+  {
+    "name": "RM Sederhana",
+    "category": "Kuliner",
+    "zone": "Pusat Kota",
+    "price_range": "Sedang",
+    "indoor_outdoor": "Indoor",
+    "duration": "Sedang",
+    "cocok_untuk": ["Keluarga & anak", "Rombongan", "Lansia"],
+    "waktu_ideal": ["Siang", "Malam"],
+    "tags": {
+      "suasana": ["ramai"],
+      "aktivitas": ["kulineran"],
+      "fasilitas": ["parkir", "toilet", "mushola"]
+    },
+    "description_short": "Rumah makan Padang ikonik yang berawal dari Kota Padang, menyajikan rendang dan aneka gulai khas Minang."
+  },
+  {
+    "name": "RM Pagi Sore",
+    "category": "Kuliner",
+    "zone": "Pusat Kota",
+    "price_range": "Sedang",
+    "indoor_outdoor": "Indoor",
+    "duration": "Sedang",
+    "cocok_untuk": ["Keluarga & anak", "Rombongan"],
+    "waktu_ideal": ["Siang", "Malam"],
+    "tags": {
+      "suasana": ["ramai"],
+      "aktivitas": ["kulineran"],
+      "fasilitas": ["parkir", "toilet", "mushola"]
+    },
+    "description_short": "Rumah makan Padang ternama dengan cita rasa rendang dan gulai yang melegenda di kalangan warga kota."
+  },
+  {
+    "name": "Warung Kopi Nan Yo",
+    "category": "Kuliner",
+    "zone": "Pusat Kota",
+    "price_range": "Murah",
+    "indoor_outdoor": "Campuran",
+    "duration": "Singkat",
+    "cocok_untuk": ["Solo", "Keluarga & anak", "Rombongan"],
+    "waktu_ideal": ["Pagi", "Malam"],
+    "tags": {
+      "suasana": ["santai", "klasik"],
+      "aktivitas": ["kulineran"],
+      "fasilitas": ["parkir"]
+    },
+    "description_short": "Warung kopi legendaris di kawasan Pondok dengan kopi khas Minang dan sate Padang, ramai sejak pagi."
+  },
+  {
+    "name": "Katupek Pitalah Purus 3",
+    "category": "Kuliner",
+    "zone": "Pusat Kota",
+    "price_range": "Murah",
+    "indoor_outdoor": "Campuran",
+    "duration": "Singkat",
+    "cocok_untuk": ["Solo", "Keluarga & anak", "Rombongan"],
+    "waktu_ideal": ["Pagi"],
+    "tags": {
+      "suasana": ["santai", "ramai"],
+      "aktivitas": ["kulineran"],
+      "fasilitas": ["parkir"]
+    },
+    "description_short": "Kedai sarapan legendaris di Jl. Purus III dekat Pantai Padang: katupek pitalah, lontong pical, dan teh talua."
+  },
+  {
+    "name": "Pondok Ikan Bakar Khatib Sulaiman",
+    "category": "Kuliner",
+    "zone": "Pesisir/Pantai",
+    "price_range": "Sedang",
+    "indoor_outdoor": "Campuran",
+    "duration": "Sedang",
+    "cocok_untuk": ["Keluarga & anak", "Rombongan", "Pasangan"],
+    "waktu_ideal": ["Siang", "Malam"],
+    "tags": {
+      "suasana": ["santai"],
+      "aktivitas": ["kulineran"],
+      "fasilitas": ["parkir", "toilet"]
+    },
+    "description_short": "Restoran ikan bakar dua lantai menghadap Pantai Padang di Jl. Samudera; seafood dibakar dengan batok kelapa."
+  },
+  {
+    "name": "Pusat Oleh-Oleh Ummi Aufa Hakim",
+    "category": "Belanja & Oleh-oleh",
+    "zone": "Pusat Kota",
+    "price_range": "Sedang",
+    "indoor_outdoor": "Indoor",
+    "duration": "Singkat",
+    "cocok_untuk": ["Keluarga & anak", "Rombongan"],
+    "waktu_ideal": ["Pagi", "Siang"],
+    "tags": {
+      "suasana": ["ramai"],
+      "aktivitas": ["belanja", "edukasi"],
+      "fasilitas": ["parkir"]
+    },
+    "description_short": "Pusat oleh-oleh di Jl. Veteran dengan produksi keripik sanjai balado sendiri; pengunjung bisa melihat prosesnya."
+  },
+  {
+    "name": "Silungkang Art Centre",
+    "category": "Belanja & Oleh-oleh",
+    "zone": "Pusat Kota",
+    "price_range": "Premium",
+    "indoor_outdoor": "Indoor",
+    "duration": "Singkat",
+    "cocok_untuk": ["Pasangan", "Rombongan", "Lansia"],
+    "waktu_ideal": ["Pagi", "Siang"],
+    "tags": {
+      "suasana": ["klasik"],
+      "aktivitas": ["belanja", "edukasi"],
+      "fasilitas": ["parkir"]
+    },
+    "description_short": "Sentra songket Minangkabau dekat Pasar Raya: kain songket, batik, mukena sulam, dan aneka suvenir khas."
+  },
+  {
+    "name": "Masjid Agung Nurul Iman",
+    "category": "Wisata Religi",
+    "zone": "Pusat Kota",
+    "price_range": "Gratis",
+    "indoor_outdoor": "Campuran",
+    "duration": "Singkat",
+    "cocok_untuk": ["Keluarga & anak", "Lansia", "Rombongan"],
+    "waktu_ideal": ["Pagi", "Siang", "Sore/sunset"],
+    "tags": {
+      "suasana": ["klasik"],
+      "aktivitas": ["ibadah", "foto"],
+      "fasilitas": ["parkir", "toilet", "mushola", "ramah difabel"]
+    },
+    "description_short": "Salah satu masjid besar di pusat kota Padang, tempat ibadah sekaligus singgah bagi wisatawan muslim."
+  },
+  {
+    "name": "Miniatur Makkah",
+    "category": "Wisata Religi",
+    "zone": "Pusat Kota",
+    "price_range": "Murah",
+    "indoor_outdoor": "Outdoor",
+    "duration": "Singkat",
+    "cocok_untuk": ["Keluarga & anak", "Rombongan"],
+    "waktu_ideal": ["Pagi", "Siang"],
+    "tags": {
+      "suasana": ["instagramable"],
+      "aktivitas": ["edukasi", "foto", "ibadah"],
+      "fasilitas": ["parkir", "toilet"]
+    },
+    "description_short": "Replika kawasan untuk latihan manasik haji yang juga jadi spot edukasi religi dan foto bagi keluarga."
+  },
+  {
+    "name": "Taman Budaya Sumatera Barat",
+    "category": "Wisata Sejarah & Budaya",
+    "zone": "Pusat Kota",
+    "price_range": "Murah",
+    "indoor_outdoor": "Campuran",
+    "duration": "Sedang",
+    "cocok_untuk": ["Keluarga & anak", "Rombongan", "Solo"],
+    "waktu_ideal": ["Pagi", "Siang"],
+    "tags": {
+      "suasana": ["klasik"],
+      "aktivitas": ["edukasi", "foto"],
+      "fasilitas": ["parkir", "toilet"]
+    },
+    "description_short": "Pusat seni dan budaya yang rutin menggelar pameran, pentas tari, dan pertunjukan seni khas Sumatera Barat."
+  },
+  {
+    "name": "Kelenteng See Hin Kiong",
+    "category": "Wisata Sejarah & Budaya",
+    "zone": "Pusat Kota",
+    "price_range": "Gratis",
+    "indoor_outdoor": "Campuran",
+    "duration": "Singkat",
+    "cocok_untuk": ["Solo", "Pasangan", "Rombongan"],
+    "waktu_ideal": ["Pagi", "Siang"],
+    "tags": {
+      "suasana": ["klasik", "instagramable"],
+      "aktivitas": ["edukasi", "ibadah", "foto"],
+      "fasilitas": ["parkir"]
+    },
+    "description_short": "Kelenteng bersejarah di kawasan Pondok dengan arsitektur Tionghoa yang kaya warna dan nilai budaya."
+  },
+  {
+    "name": "Plaza Andalas",
+    "category": "Rekreasi & Hiburan",
+    "zone": "Pusat Kota",
+    "price_range": "Sedang",
+    "indoor_outdoor": "Indoor",
+    "duration": "Sedang",
+    "cocok_untuk": ["Keluarga & anak", "Rombongan", "Pasangan"],
+    "waktu_ideal": ["Siang", "Malam"],
+    "tags": {
+      "suasana": ["ramai"],
+      "aktivitas": ["belanja", "kulineran"],
+      "fasilitas": ["parkir", "toilet", "area anak", "wifi", "ramah difabel"]
+    },
+    "description_short": "Pusat perbelanjaan di jantung kota dengan retail, food court, dan hiburan keluarga, nyaman saat cuaca panas/hujan."
+  },
+  {
+    "name": "Lapangan Imam Bonjol",
+    "category": "Rekreasi & Hiburan",
+    "zone": "Pusat Kota",
+    "price_range": "Gratis",
+    "indoor_outdoor": "Outdoor",
+    "duration": "Sedang",
+    "cocok_untuk": ["Keluarga & anak", "Rombongan"],
+    "waktu_ideal": ["Pagi", "Sore/sunset"],
+    "tags": {
+      "suasana": ["santai", "ramai"],
+      "aktivitas": ["relaksasi", "foto"],
+      "fasilitas": ["parkir"]
+    },
+    "description_short": "Ruang terbuka publik di pusat kota yang ramai di akhir pekan untuk olahraga, jajan, dan kegiatan warga."
+  },
+  {
+    "name": "Pulau Sirandah",
+    "category": "Wisata Alam",
+    "zone": "Kepulauan",
+    "price_range": "Sedang",
+    "indoor_outdoor": "Outdoor",
+    "duration": "Lama",
+    "cocok_untuk": ["Pasangan", "Rombongan"],
+    "waktu_ideal": ["Pagi", "Siang"],
+    "tags": {
+      "suasana": ["petualangan", "asri", "instagramable"],
+      "aktivitas": ["berenang", "foto", "relaksasi"],
+      "fasilitas": ["toilet"]
+    },
+    "description_short": "Pulau kecil berair jernih dekat Pulau Sikuai, cocok untuk snorkeling, camping, dan bersantai jauh dari keramaian."
+  }
+]
