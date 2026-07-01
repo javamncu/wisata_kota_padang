@@ -83,6 +83,20 @@
                             </div>
                         @endunless
 
+                        <div>
+                            <h3 class="text-sm font-semibold text-gray-900 mb-2">Kota</h3>
+                            <label class="flex items-center gap-2 text-sm text-gray-600 py-0.5">
+                                <input type="radio" name="city" value="" @checked($criteria->city === null) class="text-emerald-600 focus:ring-emerald-500">
+                                Semua kota
+                            </label>
+                            @foreach ($enums['city'] as $value => $label)
+                                <label class="flex items-center gap-2 text-sm text-gray-600 py-0.5">
+                                    <input type="radio" name="city" value="{{ $value }}" @checked($criteria->city === $value) class="text-emerald-600 focus:ring-emerald-500">
+                                    {{ $label }}
+                                </label>
+                            @endforeach
+                        </div>
+
                         <x-filter-group title="Zona" name="zone" :options="$enums['zone']" :selected="$criteria->zones" />
                         <x-filter-group title="Budget" name="price" :options="$enums['price']" :selected="$criteria->priceRanges" />
                         <x-filter-group title="Indoor / Outdoor" name="io" :options="$enums['io']" :selected="$criteria->indoorOutdoor" />
@@ -117,6 +131,9 @@
                             @endif
                             @if ($criteria->category && ! $lockedCategory)
                                 <a href="{{ $remove('category') }}" class="chip">{{ $categories->firstWhere('slug', $criteria->category)?->name }} &times;</a>
+                            @endif
+                            @if ($criteria->city)
+                                <a href="{{ $remove('city') }}" class="chip">{{ $enums['city'][$criteria->city] }} &times;</a>
                             @endif
                             @foreach ($criteria->zones as $v) <a href="{{ $remove('zone', $v) }}" class="chip">{{ $enums['zone'][$v] }} &times;</a> @endforeach
                             @foreach ($criteria->priceRanges as $v) <a href="{{ $remove('price', $v) }}" class="chip">{{ $enums['price'][$v] }} &times;</a> @endforeach

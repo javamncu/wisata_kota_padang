@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\City;
 use App\Enums\CocokUntuk;
 use App\Enums\Duration;
 use App\Enums\IndoorOutdoor;
@@ -39,6 +40,7 @@ class Destination extends Model
         'contact_website',
         'price_range',
         'zone',
+        'city',
         'indoor_outdoor',
         'duration',
         'cocok_untuk',
@@ -56,6 +58,7 @@ class Destination extends Model
             'opening_hours' => 'array',
             'price_range' => PriceRange::class,
             'zone' => Zone::class,
+            'city' => City::class,
             'indoor_outdoor' => IndoorOutdoor::class,
             'duration' => Duration::class,
             'cocok_untuk' => AsEnumCollection::of(CocokUntuk::class),

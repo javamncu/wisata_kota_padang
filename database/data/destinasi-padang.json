@@ -530,6 +530,7 @@
   {
     "name": "Silungkang Art Centre",
     "category": "Belanja & Oleh-oleh",
+    "city": "Sawahlunto",
     "zone": "Pusat Kota",
     "price_range": "Premium",
     "indoor_outdoor": "Indoor",
@@ -609,7 +610,7 @@
   },
   {
     "name": "Plaza Andalas",
-    "category": "Rekreasi & Hiburan",
+    "category": "Mall",
     "zone": "Pusat Kota",
     "price_range": "Sedang",
     "indoor_outdoor": "Indoor",
@@ -621,7 +622,7 @@
       "aktivitas": ["belanja", "kulineran"],
       "fasilitas": ["parkir", "toilet", "area anak", "wifi", "ramah difabel"]
     },
-    "description_short": "Pusat perbelanjaan di jantung kota dengan retail, food court, dan hiburan keluarga, nyaman saat cuaca panas/hujan."
+    "description_short": "Mall ikonik di pusat kota dekat Pantai Padang; Ramayana, Cinema XXI, fashion, dan food court — favorit keluarga di akhir pekan."
   },
   {
     "name": "Lapangan Imam Bonjol",
@@ -654,5 +655,230 @@
       "fasilitas": ["toilet"]
     },
     "description_short": "Pulau kecil berair jernih dekat Pulau Sikuai, cocok untuk snorkeling, camping, dan bersantai jauh dari keramaian."
+  },
+  {
+    "name": "Basko Grand Mall",
+    "category": "Mall",
+    "zone": "Pusat Kota",
+    "price_range": "Sedang",
+    "indoor_outdoor": "Indoor",
+    "duration": "Sedang",
+    "cocok_untuk": ["Keluarga & anak", "Rombongan", "Pasangan"],
+    "waktu_ideal": ["Siang", "Malam"],
+    "tags": {
+      "suasana": ["ramai"],
+      "aktivitas": ["belanja", "kulineran", "relaksasi"],
+      "fasilitas": ["parkir", "toilet", "area anak", "wifi", "ramah difabel", "mushola"]
+    },
+    "description_short": "Mall besar di Jl. Prof. Dr. Hamka (Air Tawar) terintegrasi dengan Premier Basko Hotel; Matahari, fashion, food court, dan area bermain anak."
+  },
+  {
+    "name": "Transmart Padang",
+    "category": "Mall",
+    "zone": "Pusat Kota",
+    "price_range": "Sedang",
+    "indoor_outdoor": "Indoor",
+    "duration": "Sedang",
+    "cocok_untuk": ["Keluarga & anak", "Rombongan", "Pasangan"],
+    "waktu_ideal": ["Siang", "Malam"],
+    "tags": {
+      "suasana": ["ramai"],
+      "aktivitas": ["belanja", "kulineran", "relaksasi"],
+      "fasilitas": ["parkir", "toilet", "area anak", "wifi", "ramah difabel", "mushola"]
+    },
+    "description_short": "Mall di Jl. Khatib Sulaiman dengan konsep belanja-hiburan; Trans Studio Mini, bioskop, hypermarket, dan banyak restoran."
+  },
+  {
+    "name": "Living Plaza Padang",
+    "category": "Mall",
+    "zone": "Pusat Kota",
+    "price_range": "Sedang",
+    "indoor_outdoor": "Indoor",
+    "duration": "Sedang",
+    "cocok_untuk": ["Keluarga & anak", "Pasangan", "Rombongan"],
+    "waktu_ideal": ["Siang", "Malam"],
+    "tags": {
+      "suasana": ["santai"],
+      "aktivitas": ["belanja"],
+      "fasilitas": ["parkir", "toilet", "wifi", "ramah difabel"]
+    },
+    "description_short": "Mall gaya hidup di Jl. Damar berfokus perlengkapan rumah & interior; tenant utama Ace Hardware dan Informa, suasana lebih tenang."
+  },
+  {
+    "name": "Damar Plaza",
+    "category": "Mall",
+    "zone": "Pusat Kota",
+    "price_range": "Murah",
+    "indoor_outdoor": "Indoor",
+    "duration": "Sedang",
+    "cocok_untuk": ["Keluarga & anak", "Solo", "Rombongan"],
+    "waktu_ideal": ["Siang"],
+    "tags": {
+      "suasana": ["santai"],
+      "aktivitas": ["belanja", "edukasi"],
+      "fasilitas": ["parkir", "toilet"]
+    },
+    "description_short": "Plaza di Jl. Damar untuk kebutuhan harian; salah satu daya tariknya toko buku Gramedia yang cukup besar."
+  },
+  {
+    "name": "Gereja Katedral Santa Theresia (Katedral Padang)",
+    "category": "Wisata Religi",
+    "zone": "Pusat Kota",
+    "price_range": "Gratis",
+    "indoor_outdoor": "Campuran",
+    "duration": "Singkat",
+    "cocok_untuk": ["Keluarga & anak", "Lansia", "Rombongan", "Solo"],
+    "waktu_ideal": ["Pagi", "Siang"],
+    "tags": {
+      "suasana": ["klasik"],
+      "aktivitas": ["ibadah", "foto", "edukasi"],
+      "fasilitas": ["parkir", "toilet"]
+    },
+    "description_short": "Gereja Katedral Katolik (Paroki Santa Theresia dari Kanak-Kanak Yesus) di Belakang Tangsi, dibangun 1933 dan menjadi cagar budaya; takhta Uskup Padang."
+  },
+  {
+    "name": "GPIB Efrata Padang (Gereja Ayam)",
+    "category": "Wisata Religi",
+    "zone": "Pusat Kota",
+    "price_range": "Gratis",
+    "indoor_outdoor": "Campuran",
+    "duration": "Singkat",
+    "cocok_untuk": ["Solo", "Pasangan", "Rombongan", "Lansia"],
+    "waktu_ideal": ["Pagi", "Siang"],
+    "tags": {
+      "suasana": ["klasik", "instagramable"],
+      "aktivitas": ["ibadah", "foto", "edukasi"],
+      "fasilitas": ["parkir"]
+    },
+    "description_short": "Gereja Protestan bersejarah di Jl. Bagindo Aziz Chan (resmi dibuka 1881), dijuluki 'Gereja Ayam' karena patung ayam di puncak menaranya; cagar budaya."
+  },
+  {
+    "name": "Gereja Katolik Santo Fransiskus Asisi",
+    "category": "Wisata Religi",
+    "zone": "Pusat Kota",
+    "price_range": "Gratis",
+    "indoor_outdoor": "Campuran",
+    "duration": "Singkat",
+    "cocok_untuk": ["Keluarga & anak", "Rombongan", "Lansia"],
+    "waktu_ideal": ["Pagi", "Siang"],
+    "tags": {
+      "suasana": ["instagramable"],
+      "aktivitas": ["ibadah", "foto"],
+      "fasilitas": ["parkir", "toilet"]
+    },
+    "description_short": "Salah satu gereja Katolik terbesar di Sumatera Barat, berarsitektur megah dominan putih dengan patung Santo Fransiskus Asisi di bagian depan."
+  },
+  {
+    "name": "Kapel St. Leo",
+    "category": "Wisata Religi",
+    "zone": "Pusat Kota",
+    "price_range": "Gratis",
+    "indoor_outdoor": "Campuran",
+    "duration": "Singkat",
+    "cocok_untuk": ["Pasangan", "Solo", "Rombongan"],
+    "waktu_ideal": ["Pagi"],
+    "tags": {
+      "suasana": ["klasik", "instagramable", "romantis"],
+      "aktivitas": ["ibadah", "foto"],
+      "fasilitas": ["parkir"]
+    },
+    "description_short": "Kapel mungil bergaya Belanda (1903) dengan dinding bata ekspos merah dan menara lonceng kecil di dekat Kota Tua; spot foto klasik yang ikonik."
+  },
+  {
+    "name": "Gereja Advent Padang",
+    "category": "Wisata Religi",
+    "zone": "Pusat Kota",
+    "price_range": "Gratis",
+    "indoor_outdoor": "Campuran",
+    "duration": "Singkat",
+    "cocok_untuk": ["Solo", "Rombongan", "Lansia"],
+    "waktu_ideal": ["Pagi", "Siang"],
+    "tags": {
+      "suasana": ["klasik"],
+      "aktivitas": ["ibadah", "edukasi", "foto"],
+      "fasilitas": ["parkir"]
+    },
+    "description_short": "Gereja Advent bersejarah (sejak sekitar 1900) bergaya kolonial dengan aula ibadah kayu, didirikan misionaris Ralph W. Munson; situs penting Protestan."
+  },
+  {
+    "name": "Masjid Raya Ganting",
+    "category": "Wisata Religi",
+    "zone": "Pusat Kota",
+    "price_range": "Gratis",
+    "indoor_outdoor": "Campuran",
+    "duration": "Singkat",
+    "cocok_untuk": ["Keluarga & anak", "Lansia", "Rombongan", "Solo"],
+    "waktu_ideal": ["Pagi", "Siang", "Sore/sunset"],
+    "tags": {
+      "suasana": ["klasik", "instagramable"],
+      "aktivitas": ["ibadah", "edukasi", "foto"],
+      "fasilitas": ["parkir", "toilet"]
+    },
+    "description_short": "Masjid tertua di Padang (berdiri awal abad ke-19) bergaya neoklasik dengan 25 tiang; cagar budaya yang pernah menjadi persinggahan Soekarno."
+  },
+  {
+    "name": "Masjid Muhammadan",
+    "category": "Wisata Religi",
+    "zone": "Pusat Kota",
+    "price_range": "Gratis",
+    "indoor_outdoor": "Campuran",
+    "duration": "Singkat",
+    "cocok_untuk": ["Solo", "Pasangan", "Rombongan"],
+    "waktu_ideal": ["Pagi", "Siang"],
+    "tags": {
+      "suasana": ["klasik", "instagramable"],
+      "aktivitas": ["ibadah", "edukasi", "foto"],
+      "fasilitas": ["parkir"]
+    },
+    "description_short": "Masjid bersejarah di Kota Tua Padang (dibangun 1843) oleh komunitas Muslim India; arsitektur khas India-Minang dan terkenal dengan tradisi Serak Gulo."
+  },
+  {
+    "name": "Masjid Tuo Kayu Jao",
+    "category": "Wisata Religi",
+    "city": "Solok",
+    "zone": "Perbukitan",
+    "price_range": "Gratis",
+    "indoor_outdoor": "Campuran",
+    "duration": "Singkat",
+    "cocok_untuk": ["Solo", "Pasangan", "Rombongan"],
+    "waktu_ideal": ["Pagi", "Siang"],
+    "tags": {
+      "suasana": ["klasik", "asri"],
+      "aktivitas": ["ibadah", "edukasi", "foto"],
+      "fasilitas": ["parkir"]
+    },
+    "description_short": "Salah satu masjid tertua di Indonesia (abad ke-16) di Nagari Batang Barus, Solok; seluruhnya kayu beratap ijuk, cagar budaya — sekitar 1-2 jam dari Padang."
+  },
+  {
+    "name": "Masjid Taqwa Muhammadiyah",
+    "category": "Wisata Religi",
+    "zone": "Pusat Kota",
+    "price_range": "Gratis",
+    "indoor_outdoor": "Indoor",
+    "duration": "Singkat",
+    "cocok_untuk": ["Solo", "Rombongan", "Keluarga & anak"],
+    "waktu_ideal": ["Pagi", "Siang"],
+    "tags": {
+      "suasana": ["klasik"],
+      "aktivitas": ["ibadah"],
+      "fasilitas": ["parkir", "toilet"]
+    },
+    "description_short": "Masjid di kawasan Pasar Raya (berdiri 1961) berarsitektur modern tanpa kubah; salah satu pusat kegiatan Muhammadiyah di Kota Padang."
+  },
+  {
+    "name": "Masjid Raya Andalas",
+    "category": "Wisata Religi",
+    "zone": "Pusat Kota",
+    "price_range": "Gratis",
+    "indoor_outdoor": "Campuran",
+    "duration": "Singkat",
+    "cocok_untuk": ["Keluarga & anak", "Lansia", "Rombongan"],
+    "waktu_ideal": ["Pagi", "Siang"],
+    "tags": {
+      "suasana": ["klasik"],
+      "aktivitas": ["ibadah"],
+      "fasilitas": ["parkir", "toilet"]
+    },
+    "description_short": "Masjid yang berawal dari Surau Gadang (1889), kini bangunan dominan hijau; berfungsi sebagai pusat ibadah, sosial, dan pendidikan."
   }
 ]

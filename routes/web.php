@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 use App\Http\Controllers\Admin\ConciergeController as AdminConciergeController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\Admin\DestinationController as AdminDestinationController;
+use App\Http\Controllers\Admin\QuestionController as AdminQuestionController;
 use App\Http\Controllers\Admin\ReviewController as AdminReviewController;
 use App\Http\Controllers\Admin\SettingController as AdminSettingController;
 use App\Http\Controllers\Admin\TagController as AdminTagController;
@@ -19,6 +20,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MapController;
 use App\Http\Controllers\NearbyController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\SitemapController;
@@ -42,6 +44,12 @@ Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap')
 
 Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
 Route::get('/blog/{article}', [BlogController::class, 'show'])->name('blog.show');
+
+// Tanya Jawab (public Q&A) — anyone may ask; throttled against spam.
+Route::get('/tanya-jawab', [QuestionController::class, 'index'])->name('questions.index');
+Route::post('/tanya-jawab', [QuestionController::class, 'store'])
+    ->middleware('throttle:5,60')
+    ->name('questions.store');
 
 Route::get('/kategori/{category}', [CategoryController::class, 'show'])->name('categories.show');
 Route::get('/destinasi/{destination}', [DestinationController::class, 'show'])->name('destinations.show');
@@ -90,6 +98,11 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:admin'])->grou
     Route::get('reviews', [AdminReviewController::class, 'index'])->name('reviews.index');
     Route::patch('reviews/{review}/approve', [AdminReviewController::class, 'approve'])->name('reviews.approve');
     Route::delete('reviews/{review}', [AdminReviewController::class, 'destroy'])->name('reviews.destroy');
+
+    Route::get('questions', [AdminQuestionController::class, 'index'])->name('questions.index');
+    Route::put('questions/{question}/answer', [AdminQuestionController::class, 'answer'])->name('questions.answer');
+    Route::post('questions/{question}/toggle-hide', [AdminQuestionController::class, 'toggleHide'])->name('questions.toggle-hide');
+    Route::delete('questions/{question}', [AdminQuestionController::class, 'destroy'])->name('questions.destroy');
 
     Route::get('settings', [AdminSettingController::class, 'edit'])->name('settings.edit');
     Route::put('settings', [AdminSettingController::class, 'update'])->name('settings.update');

@@ -2,6 +2,7 @@
     $icons = [
         'mountain' => '🏞️', 'landmark' => '🏛️', 'mosque' => '🕌',
         'utensils' => '🍜', 'shopping-bag' => '🛍️', 'ferris-wheel' => '🎡',
+        'mall' => '🏬',
     ];
 @endphp
 
@@ -49,6 +50,30 @@
                     <span class="text-3xl">{{ $icons[$category->icon] ?? '📍' }}</span>
                     <span class="text-sm font-medium text-gray-700 leading-tight">{{ $category->name }}</span>
                     <span class="text-xs text-gray-400">{{ $category->destinations_count }} tempat</span>
+                </a>
+            @endforeach
+        </div>
+    </section>
+
+    {{-- City shortcuts --}}
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
+        <div class="flex items-end justify-between">
+            <div>
+                <h2 class="text-2xl font-bold text-gray-900">Telusuri per Kota</h2>
+                <p class="mt-1 text-sm text-gray-500">Jelajahi destinasi di kota-kota Sumatera Barat.</p>
+            </div>
+        </div>
+        <div class="mt-6 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3">
+            @foreach ($cities as $city)
+                <a href="{{ route('explore', ['city' => $city['value']]) }}"
+                   class="group relative block overflow-hidden rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 shadow-sm ring-1 ring-gray-100 transition hover:shadow-md">
+                    <img src="{{ asset('images/city/'.$city['value'].'.png') }}" alt="{{ $city['label'] }}"
+                         class="h-24 w-full object-cover transition duration-300 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                    <div class="absolute inset-x-0 bottom-0 p-2.5 text-white">
+                        <p class="text-sm font-semibold leading-tight drop-shadow">{{ $city['label'] }}</p>
+                        <p class="text-[11px] text-white/80">{{ $city['count'] }} tempat</p>
+                    </div>
                 </a>
             @endforeach
         </div>

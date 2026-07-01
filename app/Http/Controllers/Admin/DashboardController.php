@@ -7,6 +7,7 @@ use App\Enums\Status;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Destination;
+use App\Models\Question;
 use App\Models\Review;
 use App\Models\Tag;
 use App\Models\User;
@@ -24,6 +25,7 @@ class DashboardController extends Controller
             'tags' => Tag::count(),
             'users' => User::count(),
             'pendingReviews' => Review::where('status', ReviewStatus::Pending)->count(),
+            'unansweredQuestions' => Question::unanswered()->where('is_hidden', false)->count(),
         ];
 
         $byCategory = Category::query()

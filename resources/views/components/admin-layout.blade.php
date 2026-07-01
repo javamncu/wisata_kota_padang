@@ -9,6 +9,7 @@
         ['route' => 'admin.articles.index', 'label' => 'Artikel', 'icon' => '📝', 'pattern' => 'admin.articles.*'],
         ['route' => 'admin.users.index', 'label' => 'User', 'icon' => '👥', 'pattern' => 'admin.users.*'],
         ['route' => 'admin.reviews.index', 'label' => 'Moderasi Review', 'icon' => '⭐', 'pattern' => 'admin.reviews.*'],
+        ['route' => 'admin.questions.index', 'label' => 'Tanya Jawab', 'icon' => '💬', 'pattern' => 'admin.questions.*'],
         ['route' => 'admin.concierge.index', 'label' => 'AI Concierge', 'icon' => '🤖', 'pattern' => 'admin.concierge.*'],
         ['route' => 'admin.settings.edit', 'label' => 'Pengaturan', 'icon' => '⚙️', 'pattern' => 'admin.settings.*'],
     ];

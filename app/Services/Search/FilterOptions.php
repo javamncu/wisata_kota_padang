@@ -2,6 +2,7 @@
 
 namespace App\Services\Search;
 
+use App\Enums\City;
 use App\Enums\CocokUntuk;
 use App\Enums\Duration;
 use App\Enums\IndoorOutdoor;
@@ -34,6 +35,7 @@ class FilterOptions
     public function enums(): array
     {
         return [
+            'city' => City::options(),
             'zone' => Zone::options(),
             'price' => PriceRange::options(),
             'io' => IndoorOutdoor::options(),

@@ -11,16 +11,18 @@ use Illuminate\Support\Collection;
 
 class NearbyController extends Controller
 {
-    private const RADII = [1, 3, 5, 10];
+    // 0 = "Semua" (tanpa batas jarak, diurutkan dari terdekat).
+    private const RADII = [5, 10, 25, 50, 100];
 
     public function index(Request $request, DestinationSearch $search, FilterOptions $options): View
     {
         $lat = $this->coordinate($request->input('lat'), 90);
         $lng = $this->coordinate($request->input('lng'), 180);
 
-        $radius = (int) $request->input('radius', 5);
-        if (! in_array($radius, self::RADII, true)) {
-            $radius = 5;
+        // Default 0 (Semua) supaya pengunjung di luar Padang pun tetap dapat hasil.
+        $radius = (int) $request->input('radius', 0);
+        if (! in_array($radius, array_merge([0], self::RADII), true)) {
+            $radius = 0;
         }
 
         $category = $request->filled('category') ? $request->input('category') : null;

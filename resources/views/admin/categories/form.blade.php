@@ -24,7 +24,7 @@
                 <label class="block text-sm font-medium text-gray-700">Icon (kata kunci)</label>
                 <input type="text" name="icon" value="{{ old('icon', $category->icon) }}" placeholder="mis. mountain, mosque, utensils"
                        class="mt-1 w-full rounded-xl border-gray-200 focus:border-emerald-500 focus:ring-emerald-500">
-                <p class="mt-1 text-xs text-gray-400">Opsi: mountain, landmark, mosque, utensils, shopping-bag, ferris-wheel</p>
+                <p class="mt-1 text-xs text-gray-400">Opsi: mountain, landmark, mosque, utensils, shopping-bag, ferris-wheel, mall</p>
                 @error('icon') <p class="mt-1 text-xs text-red-600">{{ $message }}</p> @enderror
             </div>
 

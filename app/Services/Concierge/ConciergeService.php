@@ -2,6 +2,7 @@
 
 namespace App\Services\Concierge;
 
+use App\Enums\City;
 use App\Enums\Duration;
 use App\Enums\IndoorOutdoor;
 use App\Enums\PriceRange;
@@ -160,16 +161,20 @@ class ConciergeService
           "off_topic": boolean,
           "keyword": string|null,
           "category": string|null,
+          "city": string|null,
           "zone": string|null,
           "price_range": string|null,
           "indoor_outdoor": string|null,
           "duration": string|null,
           "cocok_untuk": [string],
           "waktu_ideal": [string],
-          "tags": [string]
+          "tags": [string],
+          "exclude": [string]
         }
 
-        Untuk semua field selain "keyword", gunakan HANYA nilai dari daftar di bawah. Jika ragu, kosongkan (null atau []). Kata/istilah bebas yang tidak ada di daftar (mis. nama makanan, "pedas", "viral", nama tempat spesifik) taruh di "keyword".
+        Untuk semua field selain "keyword" dan "exclude", gunakan HANYA nilai dari daftar di bawah. Jika ragu, kosongkan (null atau []). Kata/istilah bebas yang tidak ada di daftar (mis. nama makanan, "pedas", "viral", nama tempat spesifik) taruh di "keyword".
+
+        PENTING soal negasi: jika pengguna menyebut sesuatu yang TIDAK diinginkan (mis. "jangan sate", "tidak ingin sate", "selain seafood", "bukan yang ramai"), masukkan kata intinya ke "exclude" (mis. ["sate"]). JANGAN memasukkan kata yang dinegasikan itu ke "keyword".
 
         Daftar nilai yang sah:
         {$vocab->forPrompt()}
@@ -189,20 +194,26 @@ class ConciergeService
     {
         $limit = (int) config('concierge.results', 6);
 
+        // City and exclusions are HARD constraints: kept in every variant so
+        // results never leak into another city, and never include something the
+        // user explicitly said they don't want.
         $variants = [
             $c, // exact
             new SearchCriteria( // drop free-text keyword
-                category: $c->category, zones: $c->zones, priceRanges: $c->priceRanges,
+                category: $c->category, city: $c->city, zones: $c->zones, priceRanges: $c->priceRanges,
                 indoorOutdoor: $c->indoorOutdoor, durations: $c->durations,
                 cocokUntuk: $c->cocokUntuk, waktuIdeal: $c->waktuIdeal, tags: $c->tags,
+                excludeKeywords: $c->excludeKeywords,
             ),
             new SearchCriteria( // also drop tags
-                category: $c->category, zones: $c->zones, priceRanges: $c->priceRanges,
+                category: $c->category, city: $c->city, zones: $c->zones, priceRanges: $c->priceRanges,
                 indoorOutdoor: $c->indoorOutdoor, durations: $c->durations,
                 cocokUntuk: $c->cocokUntuk, waktuIdeal: $c->waktuIdeal,
+                excludeKeywords: $c->excludeKeywords,
             ),
-            new SearchCriteria( // keep only the hard facets
-                category: $c->category, zones: $c->zones, priceRanges: $c->priceRanges,
+            new SearchCriteria( // keep only the hard facets (incl. city + exclusions)
+                category: $c->category, city: $c->city, zones: $c->zones, priceRanges: $c->priceRanges,
+                excludeKeywords: $c->excludeKeywords,
             ),
         ];
 
@@ -220,6 +231,11 @@ class ConciergeService
     private function reply(SearchCriteria $criteria, Collection $destinations, bool $relaxed = false): string
     {
         if ($destinations->isEmpty()) {
+            if ($criteria->city) {
+                return 'Maaf, saya belum menemukan destinasi di '.City::from($criteria->city)->label()
+                    .' yang cocok. Data untuk kota ini masih terbatas — untuk saat ini pilihan paling lengkap ada di Padang.';
+            }
+
             return 'Hmm, saya belum menemukan destinasi yang pas dengan kriteria itu. Coba longgarkan kriterianya ya — misalnya kurangi salah satu filter atau perluas areanya.';
         }
 
@@ -230,6 +246,9 @@ class ConciergeService
         $bits = [];
         if ($criteria->category) {
             $bits[] = $this->categoryName($criteria->category);
+        }
+        if ($criteria->city) {
+            $bits[] = 'di '.City::from($criteria->city)->label();
         }
         if ($criteria->priceRanges) {
             $bits[] = 'budget '.PriceRange::from($criteria->priceRanges[0])->label();

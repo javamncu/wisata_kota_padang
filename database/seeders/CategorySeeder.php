@@ -17,6 +17,7 @@ class CategorySeeder extends Seeder
             ['name' => 'Kuliner', 'icon' => 'utensils', 'description' => 'Sajian khas Minang dan kuliner legendaris Padang.'],
             ['name' => 'Belanja & Oleh-oleh', 'icon' => 'shopping-bag', 'description' => 'Pusat oleh-oleh dan pasar tradisional.'],
             ['name' => 'Rekreasi & Hiburan', 'icon' => 'ferris-wheel', 'description' => 'Tempat bersantai dan hiburan keluarga.'],
+            ['name' => 'Mall', 'icon' => 'mall', 'description' => 'Pusat perbelanjaan modern di Kota Padang.'],
         ];
 
         foreach ($categories as $category) {

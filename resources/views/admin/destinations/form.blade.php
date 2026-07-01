@@ -35,6 +35,15 @@
                     @error('category_id') <p class="mt-1 text-xs text-red-600">{{ $message }}</p> @enderror
                 </div>
                 <div>
+                    <label class="block text-sm font-medium text-gray-700">Kota</label>
+                    <select name="city" class="mt-1 w-full rounded-xl border-gray-200 focus:border-emerald-500 focus:ring-emerald-500">
+                        @foreach ($enums['city'] as $value => $label)
+                            <option value="{{ $value }}" @selected(old('city', $destination->city?->value ?? \App\Enums\City::Padang->value) === $value)>{{ $label }}</option>
+                        @endforeach
+                    </select>
+                    @error('city') <p class="mt-1 text-xs text-red-600">{{ $message }}</p> @enderror
+                </div>
+                <div>
                     <label class="block text-sm font-medium text-gray-700">Status</label>
                     <select name="status" class="mt-1 w-full rounded-xl border-gray-200 focus:border-emerald-500 focus:ring-emerald-500">
                         @foreach ($enums['status'] as $value => $label)

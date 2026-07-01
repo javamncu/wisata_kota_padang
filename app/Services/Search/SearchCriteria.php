@@ -2,6 +2,7 @@
 
 namespace App\Services\Search;
 
+use App\Enums\City;
 use App\Enums\Duration;
 use App\Enums\IndoorOutdoor;
 use App\Enums\PriceRange;
@@ -22,6 +23,7 @@ class SearchCriteria
     public function __construct(
         public readonly ?string $keyword = null,
         public readonly ?string $category = null,
+        public readonly ?string $city = null,
         /** @var string[] */
         public readonly array $zones = [],
         /** @var string[] */
@@ -36,6 +38,8 @@ class SearchCriteria
         public readonly array $waktuIdeal = [],
         /** @var string[] */
         public readonly array $tags = [],
+        /** @var string[] Free-text terms to exclude (matched on name/description). */
+        public readonly array $excludeKeywords = [],
         public readonly string $sort = 'populer',
     ) {
     }
@@ -49,6 +53,9 @@ class SearchCriteria
         return new self(
             keyword: self::cleanString($request->input('q')),
             category: self::cleanString($request->input('category')),
+            city: in_array($request->input('city'), City::values(), true)
+                ? $request->input('city')
+                : null,
             zones: self::onlyValid($request->input('zone'), Zone::values()),
             priceRanges: self::onlyValid($request->input('price'), PriceRange::values()),
             indoorOutdoor: self::onlyValid($request->input('io'), IndoorOutdoor::values()),
@@ -56,6 +63,7 @@ class SearchCriteria
             cocokUntuk: self::onlyValid($request->input('cocok'), \App\Enums\CocokUntuk::values()),
             waktuIdeal: self::onlyValid($request->input('waktu'), \App\Enums\WaktuIdeal::values()),
             tags: self::toStringArray($request->input('tags')),
+            excludeKeywords: self::toStringArray($request->input('exclude')),
             sort: in_array($request->input('sort'), self::SORTS, true)
                 ? $request->input('sort')
                 : $defaultSort,
@@ -67,13 +75,15 @@ class SearchCriteria
     {
         return $this->keyword !== null
             || $this->category !== null
+            || $this->city !== null
             || $this->zones !== []
             || $this->priceRanges !== []
             || $this->indoorOutdoor !== []
             || $this->durations !== []
             || $this->cocokUntuk !== []
             || $this->waktuIdeal !== []
-            || $this->tags !== [];
+            || $this->tags !== []
+            || $this->excludeKeywords !== [];
     }
 
     private static function cleanString(mixed $value): ?string

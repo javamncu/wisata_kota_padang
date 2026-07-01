@@ -29,7 +29,7 @@
                                         </div>
                                         <div class="min-w-0 flex-1">
                                             <p class="truncate text-sm font-semibold text-gray-900" x-text="d.name"></p>
-                                            <p class="text-xs text-gray-500"><span x-text="d.category"></span> · <span x-text="d.price"></span></p>
+                                            <p class="text-xs text-gray-500" x-text="[d.category, d.city, d.price].filter(Boolean).join(' · ')"></p>
                                             <p class="text-xs text-amber-500" x-show="d.rating" x-text="'⭐ ' + (d.rating ? d.rating.toFixed(1) : '')"></p>
                                         </div>
                                     </a>

@@ -92,6 +92,78 @@ class ConciergeTest extends TestCase
             ->assertJson(['limited' => true]);
     }
 
+    public function test_vocabulary_maps_and_validates_city(): void
+    {
+        $vocab = new Vocabulary();
+
+        $this->assertSame('bukittinggi', $vocab->toCriteria(['city' => 'bukittinggi'])->city);
+        $this->assertNull($vocab->toCriteria(['city' => 'kota-antah-berantah'])->city);
+        $this->assertNull($vocab->toCriteria([])->city);
+    }
+
+    public function test_city_filter_scopes_concierge_results(): void
+    {
+        // Silungkang Art Centre is the seeded Sawahlunto destination.
+        $this->fakeGemini(['off_topic' => false, 'city' => 'sawahlunto']);
+
+        $response = $this->postJson('/asisten/tanya', ['message' => 'wisata di Sawahlunto'])->assertOk();
+
+        $cards = $response->json('destinations');
+        $this->assertNotEmpty($cards);
+        foreach ($cards as $card) {
+            $this->assertSame('Sawahlunto', $card['city']);
+        }
+    }
+
+    public function test_city_with_no_matching_data_is_answered_honestly(): void
+    {
+        // Malls only exist in Padang, so "mall in Bukittinggi" yields nothing —
+        // and city is a hard facet, so results must not leak in from Padang.
+        $this->fakeGemini(['off_topic' => false, 'city' => 'bukittinggi', 'category' => 'mall']);
+
+        $response = $this->postJson('/asisten/tanya', ['message' => 'mall di Bukittinggi'])->assertOk();
+
+        $this->assertEmpty($response->json('destinations'));
+        $this->assertStringContainsString('Bukittinggi', $response->json('reply'));
+    }
+
+    public function test_vocabulary_maps_and_cleans_exclude_terms(): void
+    {
+        $vocab = new Vocabulary();
+
+        $criteria = $vocab->toCriteria(['exclude' => ['sate', '  seafood  ', '', 'sate']]);
+
+        $this->assertSame(['sate', 'seafood'], $criteria->excludeKeywords);
+        $this->assertSame([], $vocab->toCriteria([])->excludeKeywords);
+    }
+
+    public function test_exclusion_removes_unwanted_results(): void
+    {
+        $search = app(\App\Services\Search\DestinationSearch::class);
+
+        // Sanity: "Sate Manang Kabau" is a kuliner destination in the dataset.
+        $kuliner = $search->query(new \App\Services\Search\SearchCriteria(category: 'kuliner'))->pluck('name');
+        $this->assertTrue($kuliner->contains('Sate Manang Kabau'));
+
+        // "aku ingin kuliner untuk keluarga, tapi tidak ingin sate"
+        $this->fakeGemini([
+            'off_topic' => false,
+            'category' => 'kuliner',
+            'cocok_untuk' => ['keluarga'],
+            'exclude' => ['sate'],
+        ]);
+
+        $response = $this->postJson('/asisten/tanya', [
+            'message' => 'aku ingin kuliner yang cocok untuk keluarga, tidak ingin sate',
+        ])->assertOk();
+
+        $names = collect($response->json('destinations'))->pluck('name');
+        $this->assertNotEmpty($names);
+        foreach ($names as $name) {
+            $this->assertStringNotContainsStringIgnoringCase('sate', $name);
+        }
+    }
+
     public function test_vocabulary_drops_invalid_filters(): void
     {
         $vocab = new Vocabulary();

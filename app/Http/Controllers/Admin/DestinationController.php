@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Enums\City;
 use App\Enums\CocokUntuk;
 use App\Enums\Duration;
 use App\Enums\IndoorOutdoor;
@@ -106,6 +107,7 @@ class DestinationController extends Controller
             'enums' => [
                 'price' => PriceRange::options(),
                 'zone' => Zone::options(),
+                'city' => City::options(),
                 'io' => IndoorOutdoor::options(),
                 'duration' => Duration::options(),
                 'cocok' => CocokUntuk::options(),
@@ -133,6 +135,7 @@ class DestinationController extends Controller
             'contact_website' => ['nullable', 'url', 'max:255'],
             'price_range' => ['required', Rule::in(PriceRange::values())],
             'zone' => ['required', Rule::in(Zone::values())],
+            'city' => ['required', Rule::in(City::values())],
             'indoor_outdoor' => ['required', Rule::in(IndoorOutdoor::values())],
             'duration' => ['required', Rule::in(Duration::values())],
             'status' => ['required', Rule::in(Status::values())],

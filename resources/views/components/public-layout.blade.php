@@ -27,6 +27,7 @@
                         <a href="{{ route('quiz.index') }}" class="hover:text-emerald-700 {{ request()->routeIs('quiz.*') ? 'text-emerald-700' : '' }}">Kuis Preferensi</a>
                         <a href="{{ route('map.index') }}" class="hover:text-emerald-700 {{ request()->routeIs('map.*') ? 'text-emerald-700' : '' }}">Peta</a>
                         <a href="{{ route('blog.index') }}" class="hover:text-emerald-700 {{ request()->routeIs('blog.*') ? 'text-emerald-700' : '' }}">Blog</a>
+                        <a href="{{ route('questions.index') }}" class="hover:text-emerald-700 {{ request()->routeIs('questions.*') ? 'text-emerald-700' : '' }}">Tanya Jawab</a>
                         <a href="{{ route('concierge.index') }}" class="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-3 py-1 font-semibold text-emerald-700 ring-1 ring-emerald-200 hover:bg-emerald-100 {{ request()->routeIs('concierge.*') ? 'bg-emerald-100' : '' }}">✨ Tanya AI</a>
                     </div>
                 </div>
@@ -72,6 +73,7 @@
             <a href="{{ route('quiz.index') }}" class="block py-2 text-sm text-gray-700">Kuis Preferensi</a>
             <a href="{{ route('map.index') }}" class="block py-2 text-sm text-gray-700">Peta</a>
             <a href="{{ route('blog.index') }}" class="block py-2 text-sm text-gray-700">Blog</a>
+            <a href="{{ route('questions.index') }}" class="block py-2 text-sm text-gray-700">Tanya Jawab</a>
             <a href="{{ route('concierge.index') }}" class="block py-2 text-sm font-semibold text-emerald-700">✨ Tanya AI Concierge</a>
             <div class="border-t border-gray-100 pt-2">
                 @auth
@@ -126,6 +128,7 @@
                     <li><a href="{{ route('quiz.index') }}" class="hover:text-emerald-700">Kuis Preferensi</a></li>
                     <li><a href="{{ route('map.index') }}" class="hover:text-emerald-700">Peta Interaktif</a></li>
                     <li><a href="{{ route('blog.index') }}" class="hover:text-emerald-700">Blog</a></li>
+                    <li><a href="{{ route('questions.index') }}" class="hover:text-emerald-700">Tanya Jawab</a></li>
                 </ul>
             </div>
             <div>

@@ -18,6 +18,17 @@
         @endforeach
     </div>
 
+    {{-- Unanswered questions callout --}}
+    @if ($stats['unansweredQuestions'] > 0)
+        <div class="mt-5 flex items-center justify-between rounded-2xl border border-sky-200 bg-sky-50 p-5">
+            <div>
+                <p class="font-semibold text-sky-800">{{ $stats['unansweredQuestions'] }} pertanyaan belum dijawab</p>
+                <p class="text-sm text-sky-700">Jawab pertanyaan pengunjung di halaman Tanya Jawab.</p>
+            </div>
+            <a href="{{ route('admin.questions.index') }}" class="rounded-xl bg-sky-600 px-4 py-2 text-sm font-semibold text-white hover:bg-sky-700">Jawab &rarr;</a>
+        </div>
+    @endif
+
     {{-- Pending reviews callout --}}
     @if ($stats['pendingReviews'] > 0)
         <div class="mt-5 flex items-center justify-between rounded-2xl border border-amber-200 bg-amber-50 p-5">

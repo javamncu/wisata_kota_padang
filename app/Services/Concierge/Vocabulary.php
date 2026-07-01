@@ -2,6 +2,7 @@
 
 namespace App\Services\Concierge;
 
+use App\Enums\City;
 use App\Enums\CocokUntuk;
 use App\Enums\Duration;
 use App\Enums\IndoorOutdoor;
@@ -42,6 +43,7 @@ class Vocabulary
         return new SearchCriteria(
             keyword: $this->cleanKeyword($raw['keyword'] ?? null),
             category: $this->categories->keys()->contains($raw['category'] ?? null) ? $raw['category'] : null,
+            city: is_string($raw['city'] ?? null) && in_array($raw['city'], City::values(), true) ? $raw['city'] : null,
             zones: $this->only($raw['zone'] ?? null, Zone::values()),
             priceRanges: $this->only($raw['price_range'] ?? null, PriceRange::values()),
             indoorOutdoor: $this->only($raw['indoor_outdoor'] ?? null, IndoorOutdoor::values()),
@@ -49,7 +51,30 @@ class Vocabulary
             cocokUntuk: $this->onlyMany($raw['cocok_untuk'] ?? [], CocokUntuk::values()),
             waktuIdeal: $this->onlyMany($raw['waktu_ideal'] ?? [], WaktuIdeal::values()),
             tags: $this->onlyMany($raw['tags'] ?? [], $this->tags->keys()->all()),
+            excludeKeywords: $this->cleanExclude($raw['exclude'] ?? []),
         );
+    }
+
+    /**
+     * Free-text "don't want" terms. Not restricted to a vocabulary, but
+     * trimmed, de-duplicated and capped to keep the query sane.
+     *
+     * @return string[]
+     */
+    private function cleanExclude(mixed $values): array
+    {
+        if (! is_array($values)) {
+            $values = [$values];
+        }
+
+        return collect($values)
+            ->filter(fn ($v) => is_string($v))
+            ->map(fn (string $v) => trim(mb_substr($v, 0, 50)))
+            ->filter(fn (string $v) => $v !== '')
+            ->unique()
+            ->take(5)
+            ->values()
+            ->all();
     }
 
     /** Human-readable allow-list block injected into the LLM prompt. */
@@ -57,8 +82,11 @@ class Vocabulary
     {
         $tagsByType = Tag::query()->orderBy('name')->get()->groupBy(fn (Tag $t) => $t->type->value);
 
+        $cities = collect(City::cases())->map(fn (City $c) => "{$c->value} ({$c->label()})")->implode(', ');
+
         $lines = [];
         $lines[] = 'category (pilih satu slug): '.$this->categories->keys()->implode(', ');
+        $lines[] = 'city (kota — pilih satu slug jika pengguna menyebut nama kota): '.$cities;
         $lines[] = 'zone: '.implode(', ', Zone::values());
         $lines[] = 'price_range: '.implode(', ', PriceRange::values());
         $lines[] = 'indoor_outdoor: '.implode(', ', IndoorOutdoor::values());

@@ -26,7 +26,9 @@ class DestinationSearch
             ->with(['category', 'images', 'tags']);
 
         $this->applyKeyword($query, $c);
+        $this->applyExclude($query, $c);
         $this->applyCategory($query, $c);
+        $this->applyCity($query, $c);
         $this->applyEnumFilters($query, $c);
         $this->applyJsonFilters($query, $c);
         $this->applyTags($query, $c);
@@ -43,13 +45,16 @@ class DestinationSearch
     }
 
     /**
-     * Active destinations within $radiusKm of ($lat, $lng), nearest first.
-     * Each result carries a `distance_m` attribute (metres). Reuses the same
-     * destinations data as Explore — this is "Explore, sorted by distance".
+     * Active destinations near ($lat, $lng), nearest first. Each result carries
+     * a `distance_m` attribute (metres). Reuses the same destinations data as
+     * Explore — this is "Explore, sorted by distance".
+     *
+     * $radiusKm <= 0 means no distance limit (show all, sorted by distance) so
+     * visitors outside the city still get results with their distance shown.
      */
     public function nearby(float $lat, float $lng, int $radiusKm, ?string $categorySlug = null): Collection
     {
-        return Destination::query()
+        $query = Destination::query()
             ->active()
             ->whereNotNull('latitude')
             ->whereNotNull('longitude')
@@ -61,10 +66,14 @@ class DestinationSearch
                 'ST_Distance_Sphere(POINT(?, ?), POINT(longitude, latitude)) AS distance_m',
                 [$lng, $lat],
             )
-            ->having('distance_m', '<=', $radiusKm * 1000)
             ->orderBy('distance_m')
-            ->with(['category', 'images'])
-            ->get();
+            ->with(['category', 'images']);
+
+        if ($radiusKm > 0) {
+            $query->having('distance_m', '<=', $radiusKm * 1000);
+        }
+
+        return $query->get();
     }
 
     private function applyKeyword(Builder $query, SearchCriteria $c): void
@@ -82,6 +91,24 @@ class DestinationSearch
         });
     }
 
+    /**
+     * Exclusion: drop destinations matching any "don't want" term (e.g. the
+     * user said "jangan sate"). A destination is removed if the term appears in
+     * its name or descriptions — applied as an AND of NOTs across terms.
+     */
+    private function applyExclude(Builder $query, SearchCriteria $c): void
+    {
+        foreach ($c->excludeKeywords as $term) {
+            $like = '%'.$term.'%';
+
+            $query->whereNot(function (Builder $q) use ($like) {
+                $q->where('name', 'like', $like)
+                    ->orWhere('description_short', 'like', $like)
+                    ->orWhere('description_long', 'like', $like);
+            });
+        }
+    }
+
     private function applyCategory(Builder $query, SearchCriteria $c): void
     {
         if ($c->category === null) {
@@ -89,6 +116,15 @@ class DestinationSearch
         }
 
         $query->whereHas('category', fn (Builder $q) => $q->where('slug', $c->category));
+    }
+
+    private function applyCity(Builder $query, SearchCriteria $c): void
+    {
+        if ($c->city === null) {
+            return;
+        }
+
+        $query->where('city', $c->city);
     }
 
     private function applyEnumFilters(Builder $query, SearchCriteria $c): void

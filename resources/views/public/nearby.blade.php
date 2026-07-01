@@ -1,7 +1,11 @@
 @php
-    $fmt = fn ($m) => $m < 1000
-        ? round($m).' m'
-        : number_format($m / 1000, 1, ',', '.').' km';
+    $fmt = function ($m) {
+        if ($m < 1000) {
+            return round($m).' m';
+        }
+        $km = $m / 1000;
+        return number_format($km, $km >= 100 ? 0 : 1, ',', '.').' km';
+    };
 
     $markers = $results->map(fn ($d) => [
         'name' => $d->name,
@@ -51,7 +55,7 @@
 
                 <div class="flex flex-wrap items-center gap-4 rounded-2xl border border-gray-100 bg-white p-4 shadow-sm"
                      x-data="{ view: 'grid' }">
-                    <div class="flex items-center gap-2">
+                    <div class="flex flex-wrap items-center gap-2">
                         <span class="text-sm font-medium text-gray-700">Radius:</span>
                         @foreach ($radii as $r)
                             <button type="submit" name="radius" value="{{ $r }}"
@@ -59,6 +63,10 @@
                                 {{ $r }} km
                             </button>
                         @endforeach
+                        <button type="submit" name="radius" value="0"
+                                class="rounded-full px-3 py-1 text-sm font-medium {{ $radius === 0 ? 'bg-emerald-600 text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200' }}">
+                            Semua
+                        </button>
                     </div>
 
                     <select name="category" onchange="document.getElementById('filter-form').submit()"
@@ -79,11 +87,17 @@
 
                     {{-- Results --}}
                     <div class="w-full">
-                        <p class="mb-4 mt-2 text-sm text-gray-500">{{ $results->count() }} destinasi dalam radius {{ $radius }} km</p>
+                        <p class="mb-4 mt-2 text-sm text-gray-500">
+                            @if ($radius > 0)
+                                {{ $results->count() }} destinasi dalam radius {{ $radius }} km
+                            @else
+                                {{ $results->count() }} destinasi — diurutkan dari yang terdekat dengan posisimu
+                            @endif
+                        </p>
 
                         @if ($results->isEmpty())
                             <div class="rounded-xl border border-dashed border-gray-200 p-10 text-center text-gray-500">
-                                Tidak ada destinasi dalam {{ $radius }} km. Coba perbesar radius.
+                                Tidak ada destinasi dalam {{ $radius }} km. Coba perbesar radius atau pilih <strong>Semua</strong>.
                             </div>
                         @else
                             {{-- Grid --}}
@@ -140,11 +154,18 @@
                     L.circleMarker([userLat, userLng], { radius: 8, color: '#2563eb', fillColor: '#3b82f6', fillOpacity: 0.9 })
                         .addTo(map).bindPopup('Lokasi kamu');
 
+                    const points = [[userLat, userLng]];
                     nearby.forEach(m => {
                         L.marker([m.lat, m.lng]).addTo(map).bindPopup(
                             `<strong>${m.name}</strong><br><span style="color:#6b7280;font-size:12px">${m.category} · ${m.distance}</span><br><a href="${m.url}" style="color:#047857;font-weight:600;font-size:13px">Lihat detail →</a>`
                         );
+                        points.push([m.lat, m.lng]);
                     });
+
+                    // Auto-zoom agar posisi user + destinasi tercakup.
+                    if (points.length > 1) {
+                        map.fitBounds(points, { padding: [40, 40], maxZoom: 15 });
+                    }
                 });
             </script>
         @endif

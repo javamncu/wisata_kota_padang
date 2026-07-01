@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Masjid Raya Ganting",
+    "category": "Wisata Religi",
+    "zone": "Pusat Kota",
+    "price_range": "Gratis",
+    "indoor_outdoor": "Campuran",
+    "duration": "Singkat",
+    "cocok_untuk": ["Keluarga & anak", "Lansia", "Rombongan", "Solo"],
+    "waktu_ideal": ["Pagi", "Siang", "Sore/sunset"],
+    "tags": {
+      "suasana": ["klasik", "instagramable"],
+      "aktivitas": ["ibadah", "edukasi", "foto"],
+      "fasilitas": ["parkir", "toilet"]
+    },
+    "description_short": "Masjid tertua di Padang (berdiri awal abad ke-19) bergaya neoklasik dengan 25 tiang; cagar budaya yang pernah menjadi persinggahan Soekarno."
+  },
+  {
+    "name": "Masjid Muhammadan",
+    "category": "Wisata Religi",
+    "zone": "Pusat Kota",
+    "price_range": "Gratis",
+    "indoor_outdoor": "Campuran",
+    "duration": "Singkat",
+    "cocok_untuk": ["Solo", "Pasangan", "Rombongan"],
+    "waktu_ideal": ["Pagi", "Siang"],
+    "tags": {
+      "suasana": ["klasik", "instagramable"],
+      "aktivitas": ["ibadah", "edukasi", "foto"],
+      "fasilitas": ["parkir"]
+    },
+    "description_short": "Masjid bersejarah di Kota Tua Padang (dibangun 1843) oleh komunitas Muslim India; arsitektur khas India–Minang dan terkenal dengan tradisi Serak Gulo."
+  },
+  {
+    "name": "Masjid Tuo Kayu Jao",
+    "category": "Wisata Religi",
+    "zone": "Perbukitan",
+    "price_range": "Gratis",
+    "indoor_outdoor": "Campuran",
+    "duration": "Singkat",
+    "cocok_untuk": ["Solo", "Pasangan", "Rombongan"],
+    "waktu_ideal": ["Pagi", "Siang"],
+    "tags": {
+      "suasana": ["klasik", "asri"],
+      "aktivitas": ["ibadah", "edukasi", "foto"],
+      "fasilitas": ["parkir"]
+    },
+    "description_short": "Salah satu masjid tertua di Indonesia (abad ke-16) di Nagari Batang Barus, Solok; seluruhnya kayu beratap ijuk, cagar budaya — sekitar 1–2 jam dari Padang."
+  },
+  {
+    "name": "Masjid Taqwa Muhammadiyah",
+    "category": "Wisata Religi",
+    "zone": "Pusat Kota",
+    "price_range": "Gratis",
+    "indoor_outdoor": "Indoor",
+    "duration": "Singkat",
+    "cocok_untuk": ["Solo", "Rombongan", "Keluarga & anak"],
+    "waktu_ideal": ["Pagi", "Siang"],
+    "tags": {
+      "suasana": ["klasik"],
+      "aktivitas": ["ibadah"],
+      "fasilitas": ["parkir", "toilet"]
+    },
+    "description_short": "Masjid di kawasan Pasar Raya (berdiri 1961) berarsitektur modern tanpa kubah; salah satu pusat kegiatan Muhammadiyah di Kota Padang."
+  },
+  {
+    "name": "Masjid Raya Andalas",
+    "category": "Wisata Religi",
+    "zone": "Pusat Kota",
+    "price_range": "Gratis",
+    "indoor_outdoor": "Campuran",
+    "duration": "Singkat",
+    "cocok_untuk": ["Keluarga & anak", "Lansia", "Rombongan"],
+    "waktu_ideal": ["Pagi", "Siang"],
+    "tags": {
+      "suasana": ["klasik"],
+      "aktivitas": ["ibadah"],
+      "fasilitas": ["parkir", "toilet"]
+    },
+    "description_short": "Masjid yang berawal dari Surau Gadang (1889), kini bangunan dominan hijau; berfungsi sebagai pusat ibadah, sosial, dan pendidikan."
+  }
+]

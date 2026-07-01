@@ -44,6 +44,7 @@ class ConciergeController extends Controller
                 'url' => route('destinations.show', $d),
                 'image' => $d->coverUrl(),
                 'category' => $d->category->name,
+                'city' => $d->city?->label(),
                 'price' => $d->price_range->label(),
                 'rating' => $d->rating_cache !== null ? (float) $d->rating_cache : null,
                 'reviews' => $d->review_count_cache,

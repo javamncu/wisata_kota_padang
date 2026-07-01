@@ -141,12 +141,33 @@ class AppFlowTest extends TestCase
     {
         // The destination seeder imports the JSON dataset and must reuse the
         // canonical tags (no accidental duplicate slugs).
-        $this->assertSame(41, \App\Models\Destination::count());
+        $this->assertSame(115, \App\Models\Destination::count());
         $this->assertSame(22, \App\Models\Tag::count());
 
         // No two tags share a normalized slug.
         $slugs = \App\Models\Tag::pluck('slug');
         $this->assertSame($slugs->count(), $slugs->unique()->count());
+    }
+
+    public function test_city_filter_scopes_results(): void
+    {
+        $search = app(\App\Services\Search\DestinationSearch::class);
+        $query = fn (string $city) => $search->query(new \App\Services\Search\SearchCriteria(city: $city))->get();
+
+        $padang = $query('padang');
+        $bukittinggi = $query('bukittinggi');
+
+        // Each of the seeded cities has its own destinations.
+        $this->assertGreaterThan(0, $padang->count());
+        $this->assertGreaterThan(0, $bukittinggi->count());
+
+        // A city filter must never leak destinations from another city.
+        $this->assertSame(['padang'], $padang->pluck('city')->map->value->unique()->values()->all());
+        $this->assertSame(['bukittinggi'], $bukittinggi->pluck('city')->map->value->unique()->values()->all());
+
+        // An unknown city value is ignored (treated as "all cities").
+        $this->get('/explore?city=tidak-ada')->assertOk();
+        $this->get('/explore?city=bukittinggi')->assertOk();
     }
 
     public function test_quiz_scoring_ranks_matches(): void

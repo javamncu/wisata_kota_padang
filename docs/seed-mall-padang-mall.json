@@ -1,0 +1,170 @@
+[
+  {
+    "name": "Plaza Andalas",
+    "category": "Mall",
+    "zone": "Pusat Kota",
+    "price_range": "Sedang",
+    "indoor_outdoor": "Indoor",
+    "duration": "Sedang",
+    "cocok_untuk": [
+      "Keluarga & anak",
+      "Rombongan",
+      "Pasangan"
+    ],
+    "waktu_ideal": [
+      "Siang",
+      "Malam"
+    ],
+    "tags": {
+      "suasana": [
+        "ramai"
+      ],
+      "aktivitas": [
+        "belanja",
+        "kulineran"
+      ],
+      "fasilitas": [
+        "parkir",
+        "toilet",
+        "area anak",
+        "wifi",
+        "ramah difabel"
+      ]
+    },
+    "description_short": "Mall ikonik di pusat kota dekat Pantai Padang; Ramayana, Cinema XXI, fashion, dan food court — favorit keluarga di akhir pekan."
+  },
+  {
+    "name": "Basko Grand Mall",
+    "category": "Mall",
+    "zone": "Pusat Kota",
+    "price_range": "Sedang",
+    "indoor_outdoor": "Indoor",
+    "duration": "Sedang",
+    "cocok_untuk": [
+      "Keluarga & anak",
+      "Rombongan",
+      "Pasangan"
+    ],
+    "waktu_ideal": [
+      "Siang",
+      "Malam"
+    ],
+    "tags": {
+      "suasana": [
+        "ramai"
+      ],
+      "aktivitas": [
+        "belanja",
+        "kulineran",
+        "relaksasi"
+      ],
+      "fasilitas": [
+        "parkir",
+        "toilet",
+        "area anak",
+        "wifi",
+        "ramah difabel",
+        "mushola"
+      ]
+    },
+    "description_short": "Mall besar di Jl. Prof. Dr. Hamka (Air Tawar) terintegrasi dengan Premier Basko Hotel; Matahari, fashion, food court, dan area bermain anak."
+  },
+  {
+    "name": "Transmart Padang",
+    "category": "Mall",
+    "zone": "Pusat Kota",
+    "price_range": "Sedang",
+    "indoor_outdoor": "Indoor",
+    "duration": "Sedang",
+    "cocok_untuk": [
+      "Keluarga & anak",
+      "Rombongan",
+      "Pasangan"
+    ],
+    "waktu_ideal": [
+      "Siang",
+      "Malam"
+    ],
+    "tags": {
+      "suasana": [
+        "ramai"
+      ],
+      "aktivitas": [
+        "belanja",
+        "kulineran",
+        "relaksasi"
+      ],
+      "fasilitas": [
+        "parkir",
+        "toilet",
+        "area anak",
+        "wifi",
+        "ramah difabel",
+        "mushola"
+      ]
+    },
+    "description_short": "Mall di Jl. Khatib Sulaiman dengan konsep belanja-hiburan; Trans Studio Mini, bioskop, hypermarket, dan banyak restoran."
+  },
+  {
+    "name": "Living Plaza Padang",
+    "category": "Mall",
+    "zone": "Pusat Kota",
+    "price_range": "Sedang",
+    "indoor_outdoor": "Indoor",
+    "duration": "Sedang",
+    "cocok_untuk": [
+      "Keluarga & anak",
+      "Pasangan",
+      "Rombongan"
+    ],
+    "waktu_ideal": [
+      "Siang",
+      "Malam"
+    ],
+    "tags": {
+      "suasana": [
+        "santai"
+      ],
+      "aktivitas": [
+        "belanja"
+      ],
+      "fasilitas": [
+        "parkir",
+        "toilet",
+        "wifi",
+        "ramah difabel"
+      ]
+    },
+    "description_short": "Mall gaya hidup di Jl. Damar berfokus perlengkapan rumah & interior; tenant utama Ace Hardware dan Informa, suasana lebih tenang."
+  },
+  {
+    "name": "Damar Plaza",
+    "category": "Mall",
+    "zone": "Pusat Kota",
+    "price_range": "Murah",
+    "indoor_outdoor": "Indoor",
+    "duration": "Sedang",
+    "cocok_untuk": [
+      "Keluarga & anak",
+      "Solo",
+      "Rombongan"
+    ],
+    "waktu_ideal": [
+      "Siang"
+    ],
+    "tags": {
+      "suasana": [
+        "santai"
+      ],
+      "aktivitas": [
+        "belanja",
+        "edukasi"
+      ],
+      "fasilitas": [
+        "parkir",
+        "toilet"
+      ]
+    },
+    "description_short": "Plaza di Jl. Damar untuk kebutuhan harian; salah satu daya tariknya toko buku Gramedia yang cukup besar."
+  }
+]

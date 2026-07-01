@@ -65,7 +65,9 @@ class ImportDestinationImages extends Command
             }
 
             // Idempotent: drop any existing gallery images for this destination.
-            foreach ($destination->images as $old) {
+            // Query fresh each time so repeated files for the same destination
+            // don't leave stale duplicates.
+            foreach ($destination->images()->get() as $old) {
                 @unlink(public_path($old->path));
                 $old->delete();
             }
