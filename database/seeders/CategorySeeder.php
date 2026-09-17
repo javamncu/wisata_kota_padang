@@ -11,13 +11,13 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
         $categories = [
-            ['name' => 'Wisata Alam', 'icon' => 'mountain', 'description' => 'Pantai, perbukitan, dan keindahan alam Kota Padang.'],
+            ['name' => 'Wisata Alam', 'icon' => 'mountain', 'description' => 'Pantai, perbukitan, dan keindahan alam Sumatera Barat.'],
             ['name' => 'Wisata Sejarah & Budaya', 'icon' => 'landmark', 'description' => 'Bangunan tua, museum, dan jejak sejarah kota.'],
             ['name' => 'Wisata Religi', 'icon' => 'mosque', 'description' => 'Masjid dan tempat ibadah bersejarah.'],
             ['name' => 'Kuliner', 'icon' => 'utensils', 'description' => 'Sajian khas Minang dan kuliner legendaris Padang.'],
             ['name' => 'Belanja & Oleh-oleh', 'icon' => 'shopping-bag', 'description' => 'Pusat oleh-oleh dan pasar tradisional.'],
             ['name' => 'Rekreasi & Hiburan', 'icon' => 'ferris-wheel', 'description' => 'Tempat bersantai dan hiburan keluarga.'],
-            ['name' => 'Mall', 'icon' => 'mall', 'description' => 'Pusat perbelanjaan modern di Kota Padang.'],
+            ['name' => 'Mall', 'icon' => 'mall', 'description' => 'Pusat perbelanjaan modern di Sumatera Barat.'],
         ];
 
         foreach ($categories as $category) {

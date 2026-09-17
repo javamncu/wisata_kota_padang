@@ -26,7 +26,7 @@
     $tagNames = $tagsByType->flatten()->mapWithKeys(fn ($t) => [$t->slug => $t->name]);
 @endphp
 
-<x-public-layout :title="($lockedCategory?->name ?? 'Explore').' — Wisata Kota Padang'">
+<x-public-layout :title="($lockedCategory?->name ?? 'Explore')">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {{-- Header --}}
         <div class="mb-6">

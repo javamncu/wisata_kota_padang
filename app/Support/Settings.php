@@ -16,14 +16,14 @@ class Settings
 
     public const DEFAULTS = [
         // Umum
-        'site_name' => 'Wisata Kota Padang',
+        'site_name' => 'Website Direktori Wisata Sumatera Barat Berbasis AI',
         'contact_email' => 'info@wisatapadang.my.id',
         'contact_phone' => '',
         'social_instagram' => '@wisatakotapadang',
         // Konten Beranda
-        'hero_title' => 'Jelajahi keindahan Kota Padang',
+        'hero_title' => 'Jelajahi keindahan Sumatera Barat',
         'hero_subtitle' => 'Temukan tempat wisata, kuliner, dan budaya terbaik — disesuaikan dengan preferensimu.',
-        'about_text' => 'Satu pintu informasi wisata, kuliner, dan budaya Kota Padang.',
+        'about_text' => 'Satu pintu informasi wisata, kuliner, dan budaya Sumatera Barat.',
         'featured_slugs' => [], // empty = otomatis (paling banyak diulas)
         // Budget (Opsi A: label/ambang saja — tidak mengubah enum/logika)
         'budget_gratis' => 'Tidak dipungut biaya masuk',

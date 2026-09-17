@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ $title ?? 'Wisata Kota Padang' }}</title>
+    {{-- Nama situs ditambahkan di sini, jadi tiap halaman cukup mengirim judulnya sendiri. --}}
+    <title>{{ isset($title) ? $title.' — '.setting('site_name') : setting('site_name') }}</title>
 
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600,700&display=swap" rel="stylesheet">
@@ -139,7 +140,7 @@
             </div>
         </div>
         <div class="border-t border-gray-100 py-4 text-center text-xs text-gray-400">
-            &copy; {{ date('Y') }} Wisata Kota Padang.
+            &copy; {{ date('Y') }} {{ setting('site_name') }}.
         </div>
     </footer>
 

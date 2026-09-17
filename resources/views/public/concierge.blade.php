@@ -1,4 +1,4 @@
-<x-public-layout title="AI Concierge — Wisata Kota Padang">
+<x-public-layout title="AI Concierge">
     <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-8" x-data="concierge()">
         <div class="text-center">
             <h1 class="text-2xl font-bold text-gray-900">✨ AI Concierge</h1>

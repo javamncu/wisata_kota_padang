@@ -1,6 +1,6 @@
 @php $metaDesc = $article->meta_description ?: $article->excerpt; @endphp
 
-<x-public-layout :title="($article->meta_title ?: $article->title).' — '.setting('site_name')">
+<x-public-layout :title="$article->meta_title ?: $article->title">
     @push('head')
         @if ($metaDesc)<meta name="description" content="{{ $metaDesc }}">@endif
         <meta property="og:type" content="article">

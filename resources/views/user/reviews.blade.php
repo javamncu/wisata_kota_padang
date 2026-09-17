@@ -1,4 +1,4 @@
-<x-public-layout title="Review Saya — Wisata Kota Padang">
+<x-public-layout title="Review Saya">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <h1 class="text-2xl font-bold text-gray-900">Review Saya</h1>
         <p class="mt-1 text-gray-500">Ulasan yang kamu tulis.</p>

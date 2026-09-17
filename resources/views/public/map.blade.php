@@ -1,9 +1,9 @@
-<x-public-layout title="Peta Interaktif — Wisata Kota Padang">
+<x-public-layout title="Peta Interaktif">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div class="mb-5 flex flex-wrap items-end justify-between gap-4">
             <div>
                 <h1 class="text-2xl font-bold text-gray-900">Peta Interaktif</h1>
-                <p class="mt-1 text-gray-500">{{ $markers->count() }} destinasi tersebar di Kota Padang.</p>
+                <p class="mt-1 text-gray-500">{{ $markers->count() }} destinasi tersebar di Sumatera Barat.</p>
             </div>
             <div class="flex gap-3">
                 <select id="filter-category" class="rounded-xl border-gray-200 py-2.5 text-sm shadow-sm focus:border-emerald-500 focus:ring-emerald-500">
@@ -33,7 +33,9 @@
             const markersData = @json($markers);
 
             document.addEventListener('DOMContentLoaded', function () {
-                const map = L.map('map').setView([-0.9495, 100.3543], 12);
+                // Titik awal (dipakai kalau tidak ada marker); selebihnya peta
+                // otomatis menyesuaikan diri ke seluruh marker lewat fitBounds().
+                const map = L.map('map').setView([-0.6, 100.4], 9);
                 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                     attribution: '&copy; OpenStreetMap', maxZoom: 19,
                 }).addTo(map);
@@ -45,9 +47,12 @@
                     const zone = document.getElementById('filter-zone').value;
                     layer.clearLayers();
 
+                    const points = [];
+
                     markersData
                         .filter(m => (!cat || m.categorySlug === cat) && (!zone || m.zone === zone))
                         .forEach(m => {
+                            points.push([m.lat, m.lng]);
                             const rating = m.rating ? `⭐ ${m.rating.toFixed(1)}` : 'Belum ada ulasan';
                             L.marker([m.lat, m.lng]).addTo(layer).bindPopup(
                                 `<div style="min-width:160px">
@@ -58,6 +63,12 @@
                                 </div>`
                             );
                         });
+
+                    // Sesuaikan tampilan agar semua marker (7 kota, atau hasil
+                    // filter) muat di layar tanpa perlu geser manual.
+                    if (points.length) {
+                        map.fitBounds(points, { padding: [40, 40], maxZoom: 13 });
+                    }
                 }
 
                 document.getElementById('filter-category').addEventListener('change', render);

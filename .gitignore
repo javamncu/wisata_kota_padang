@@ -22,3 +22,6 @@
 Homestead.json
 Homestead.yaml
 Thumbs.db
+
+# Screenshot dokumentasi (dibuat ulang lewat docs/screenshot.mjs)
+/docs/screenshoots

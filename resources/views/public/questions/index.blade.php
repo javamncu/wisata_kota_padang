@@ -1,9 +1,9 @@
-<x-public-layout title="Tanya Jawab — Wisata Kota Padang">
+<x-public-layout title="Tanya Jawab">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {{-- Header --}}
         <div class="mb-6">
             <h1 class="text-2xl font-bold text-gray-900">Tanya Jawab</h1>
-            <p class="mt-1 text-gray-500">Punya pertanyaan seputar wisata Kota Padang? Tanyakan ke admin — pertanyaan & jawabannya bisa dilihat semua pengunjung.</p>
+            <p class="mt-1 text-gray-500">Punya pertanyaan seputar wisata Sumatera Barat? Tanyakan ke admin — pertanyaan & jawabannya bisa dilihat semua pengunjung.</p>
         </div>
 
         {{-- Ask form --}}

@@ -3,7 +3,7 @@
     $hasCoords = $destination->latitude !== null && $destination->longitude !== null;
 @endphp
 
-<x-public-layout :title="$destination->name.' — Wisata Kota Padang'">
+<x-public-layout :title="$destination->name">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {{-- Breadcrumb --}}
         <nav class="text-sm text-gray-400 mb-3">

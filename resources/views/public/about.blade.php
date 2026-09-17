@@ -1,10 +1,10 @@
-<x-public-layout title="Tentang & Kontak — Wisata Kota Padang">
+<x-public-layout title="Tentang & Kontak">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <h1 class="text-3xl font-bold text-gray-900">Tentang</h1>
         <div class="mt-4 space-y-4 text-gray-600 leading-relaxed">
             <p>
                 <strong>{{ setting('site_name') }}</strong> adalah direktori informasi wisata — semacam "satu pintu"
-                bagi wisatawan domestik maupun asing yang ingin menjelajahi Kota Padang. {{ setting('about_text') }}
+                bagi wisatawan domestik maupun asing yang ingin menjelajahi Sumatera Barat. {{ setting('about_text') }}
             </p>
             <p>
                 Selain pencarian dan filter, tersedia <a href="{{ route('quiz.index') }}" class="text-emerald-700 hover:underline">kuis preferensi</a>

@@ -37,7 +37,7 @@ class ConciergeService
         // Off-topic guardrail.
         if (($extracted['off_topic'] ?? false) === true) {
             return [
-                'reply' => 'Maaf, saya hanya bisa membantu seputar wisata, kuliner, dan tempat menarik di Kota Padang. Coba tanyakan, misalnya: "kuliner enak dekat pantai" atau "tempat keluarga yang murah".',
+                'reply' => 'Maaf, saya hanya bisa membantu seputar wisata, kuliner, dan tempat menarik di Sumatera Barat. Coba tanyakan, misalnya: "kuliner enak dekat pantai" atau "wisata keluarga di Bukittinggi".',
                 'off_topic' => true,
                 'destinations' => collect(),
                 'criteria' => null,
@@ -154,7 +154,7 @@ class ConciergeService
     private function systemPrompt(Vocabulary $vocab): string
     {
         return <<<PROMPT
-        Kamu adalah asisten aplikasi direktori wisata Kota Padang. Tugasmu HANYA menerjemahkan pertanyaan pengguna menjadi filter pencarian berbentuk JSON. JANGAN mengarang tempat. JANGAN menulis teks lain selain JSON.
+        Kamu adalah asisten aplikasi direktori wisata Sumatera Barat (mencakup Padang, Bukittinggi, Padang Panjang, Pariaman, Payakumbuh, Sawahlunto, dan Solok). Tugasmu HANYA menerjemahkan pertanyaan pengguna menjadi filter pencarian berbentuk JSON. JANGAN mengarang tempat. JANGAN menulis teks lain selain JSON.
 
         Kembalikan HANYA JSON dengan struktur ini:
         {
@@ -179,7 +179,7 @@ class ConciergeService
         Daftar nilai yang sah:
         {$vocab->forPrompt()}
 
-        Set "off_topic": true HANYA jika pertanyaan jelas tidak berkaitan dengan wisata/kuliner/tempat di Kota Padang; saat itu kosongkan field lainnya.
+        Set "off_topic": true HANYA jika pertanyaan jelas tidak berkaitan dengan wisata/kuliner/tempat di Sumatera Barat; saat itu kosongkan field lainnya.
         PROMPT;
     }
 
@@ -233,7 +233,7 @@ class ConciergeService
         if ($destinations->isEmpty()) {
             if ($criteria->city) {
                 return 'Maaf, saya belum menemukan destinasi di '.City::from($criteria->city)->label()
-                    .' yang cocok. Data untuk kota ini masih terbatas — untuk saat ini pilihan paling lengkap ada di Padang.';
+                    .' yang cocok dengan kriteria itu. Coba longgarkan kriterianya, atau lihat kota lain di Sumatera Barat.';
             }
 
             return 'Hmm, saya belum menemukan destinasi yang pas dengan kriteria itu. Coba longgarkan kriterianya ya — misalnya kurangi salah satu filter atau perluas areanya.';

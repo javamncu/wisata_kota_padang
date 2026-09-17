@@ -1,7 +1,7 @@
-<x-public-layout title="Blog — Wisata Kota Padang">
+<x-public-layout title="Blog">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <h1 class="text-3xl font-bold text-gray-900">Blog & Panduan</h1>
-        <p class="mt-1 text-gray-500">Tips, cerita, dan panduan menjelajahi Kota Padang.</p>
+        <p class="mt-1 text-gray-500">Tips, cerita, dan panduan menjelajahi Sumatera Barat.</p>
 
         @if ($articles->isEmpty())
             <div class="mt-8 rounded-2xl border border-dashed border-gray-200 bg-white p-12 text-center text-gray-500">

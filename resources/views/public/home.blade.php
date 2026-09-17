@@ -6,10 +6,10 @@
     ];
 @endphp
 
-<x-public-layout title="Wisata Kota Padang — Temukan destinasi terbaik">
+<x-public-layout title="Temukan destinasi terbaik">
     {{-- Hero --}}
     <section class="relative overflow-hidden text-white">
-        <img src="{{ asset('images/hero.png') }}" alt="Pemandangan Kota Padang"
+        <img src="{{ asset('images/hero.png') }}" alt="Pemandangan Sumatera Barat"
              class="absolute inset-0 h-full w-full object-cover">
         <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">

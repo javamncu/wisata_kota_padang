@@ -13,7 +13,9 @@ return [
 
     'gemini' => [
         'key' => env('GEMINI_API_KEY'),
-        'model' => env('GEMINI_MODEL', 'gemini-2.0-flash'),
+        // Default sengaja flash-lite: free tier-nya paling longgar (~1000/hari)
+        // dan cukup untuk tugas ekstraksi filter ini.
+        'model' => env('GEMINI_MODEL', 'gemini-2.5-flash-lite'),
         'endpoint' => env('GEMINI_ENDPOINT', 'https://generativelanguage.googleapis.com/v1beta/models'),
         'timeout' => (int) env('GEMINI_TIMEOUT', 20),
         'retries' => (int) env('GEMINI_RETRIES', 2), // extra attempts on transient 5xx
